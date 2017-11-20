@@ -1,13 +1,20 @@
 Rails.application.routes.draw do
-  get 'batches/batches'
 
-  get 'batches/batch_students'
+  scope '(:locale)', locale: /fr|en|nl|de/ do
 
-  get 'students/student_details'
+    root to: 'batches#batches'
 
-  get 'projects/projects'
+    get 'batches' => 'batches#batches'
 
-  get 'projects/project_details'
+    get 'batches/:batch' => 'batches#batch_students'
+
+    get 'students/:student' => 'students#student_details'
+
+    get 'projects' => 'projects#projects'
+
+    get 'projects/:project' => 'projects#project_details'
+
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
