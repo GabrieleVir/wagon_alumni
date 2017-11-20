@@ -22,8 +22,7 @@ default: &default
   pool: 5
   host: localhost
   username: gabriele
-  password: user
-
+  password: u
 development:
   <<: *default
   database: alumni-brussels-le-wagon_development
