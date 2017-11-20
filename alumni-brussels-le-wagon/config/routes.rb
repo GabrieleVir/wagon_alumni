@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'batches/batches'
+
+  get 'batches/batch_students'
+
+  get 'students/student_details'
+
+  get 'projects/projects'
+
+  get 'projects/project_details'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
