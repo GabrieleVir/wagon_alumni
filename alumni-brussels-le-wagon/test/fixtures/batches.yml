@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date_start: 2017-11-20
+  date_end: 2017-11-20
+  previous_batch: 1
+
+two:
+  name: MyString
+  date_start: 2017-11-20
+  date_end: 2017-11-20
+  previous_batch: 1
