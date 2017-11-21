@@ -1,10 +1,10 @@
 <ul class="container students list-unstyled">
-  <% data.students["batch_#{batch}"].each_with_index do |student, id| %>
+  <% @students.each_with_index do |student, id| %>
 
-    <li <%= student_attributes(id, student, batch) %> class="students-list-item">
+    <li <%= #student_attributes(id, student, student.batch_id) %> class="students-list-item">
       <figure class="student-card">
         <div class="card-front card-front-<%= animation %>">
-          <%= image_tag "batches/batch-#{batch}/#{student.picture}", class: "img-responsive" %>
+          <%= image_tag "batches/batch-#{student.batch_id}/#{student.picture}", class: "img-responsive" %>
         </div>
         <div class="card-back card-back-<%= animation %>">
           <div class="card-wrapper">
@@ -13,11 +13,11 @@
             <% unless student.fake %>
               <figcaption>
 
-                <% link_to student.url, target: '_blank' do %>
+                <% link_to student.portfolio_url, target: '_blank' do %>
                   <i class='mdi-link-variant mdi'></i>
                 <% end %>
 
-                <% if student.github %>
+                <% if student.github_url %>
                   <% link_to student.github, target: '_blank' do %>
                     <i class='mdi-github-circle mdi'></i>
                   <% end %>
