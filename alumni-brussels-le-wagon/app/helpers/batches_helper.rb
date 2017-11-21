@@ -1,5 +1,6 @@
 module BatchesHelper
 
+<<<<<<< HEAD
   ### HELPERS from Middleman project
 
   # def batches_in_3_cols
@@ -52,6 +53,7 @@ module BatchesHelper
   #   sibling_student_id += step if sibling_student.fake
   #   return "\"#{sibling_student_id.to_s}\""
   # end
+
 
   def batches_in_3_cols
     batches = data["batches"]
