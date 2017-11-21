@@ -11,8 +11,6 @@
   max-height: 100%;
 
   margin: 0 auto;
-
-  //@include prefix('perspective', '800px');
 }
 
 .students-list-item {
@@ -118,7 +116,7 @@ figcaption {
 }
 
 .card-back-0 {
-  @include prefix('transform', 'rotate3d(1, 1, 0, -180deg)');
+  transform: rotate3d(1, 1, 0, -180deg);
 }
 
 .students-list-item.initial .card-back-0, .students-list-item.initial .card-front-0 {
@@ -126,11 +124,11 @@ figcaption {
 }
 
 .students-list-item:hover .card-back-0, .students-list-item.hovered .card-back-0 {
-  @include prefix('transform', 'rotate3d(1, 1, 0, 0)');
+  transform: rotate3d(1, 1, 0, 0);
 }
 
 .students-list-item:hover .card-front-0, .students-list-item.hovered .card-front-0 {
-  @include prefix('transform', 'rotate3d(1, 1, 0, -180deg)');
+  transform: rotate3d(1, 1, 0, -180deg);
 }
 
 .card-back-1, .card-front-1 {
