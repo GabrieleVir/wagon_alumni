@@ -1,2 +1,39 @@
-<h1>Batches#batch_students</h1>
-<p>Find me in app/views/batches/batch_students.html.erb</p>
+<ul class="container students list-unstyled">
+  <% data.students["batch_#{batch}"].each_with_index do |student, id| %>
+
+    <li <%= student_attributes(id, student, batch) %> class="students-list-item">
+      <figure class="student-card">
+        <div class="card-front card-front-<%= animation %>">
+          <%= image_tag "batches/batch-#{batch}/#{student.picture}", class: "img-responsive" %>
+        </div>
+        <div class="card-back card-back-<%= animation %>">
+          <div class="card-wrapper">
+            <h2><%= student.name %></h2>
+
+            <% unless student.fake %>
+              <figcaption>
+
+                <% link_to student.url, target: '_blank' do %>
+                  <i class='mdi-link-variant mdi'></i>
+                <% end %>
+
+                <% if student.github %>
+                  <% link_to student.github, target: '_blank' do %>
+                    <i class='mdi-github-circle mdi'></i>
+                  <% end %>
+                <% end %>
+
+              </figcaption>
+            <% end %>
+            <% if student.fake && student.home %>
+              <% link_to '../../' do %>
+                <button class="wagon-btn-style">Home</button>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </figure>
+    </li>
+
+  <% end %>
+</ul>
