@@ -1,5 +1,5 @@
 <ul class="container students list-unstyled">
-  <% data.students["batch_#{batch}"].each_with_index do |student, id| %>
+  <% @students.each_with_index do |student, id| %>
 
     <li <%= student_attributes(id, student, batch) %> class="students-list-item">
       <figure class="student-card">
