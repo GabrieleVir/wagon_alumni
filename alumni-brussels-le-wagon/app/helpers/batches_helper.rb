@@ -1,4 +1,7 @@
 module BatchesHelper
+
+  ### HELPERS from Middleman project
+
   # def batches_in_3_cols
   #   batches = data["batches"]
   #   batches_cols = [[], [], []]

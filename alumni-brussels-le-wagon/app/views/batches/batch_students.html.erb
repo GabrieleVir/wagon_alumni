@@ -1,7 +1,7 @@
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
 
-    <li <%= #student_attributes(id, student, student.batch_id) %> class="students-list-item">
+    <li class="students-list-item">
       <figure class="student-card">
         <div class="card-front card-front-<%= animation %>">
           <%= image_tag "batches/batch-#{student.batch_id}/#{student.picture}", class: "img-responsive" %>

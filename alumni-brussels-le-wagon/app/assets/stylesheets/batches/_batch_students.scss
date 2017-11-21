@@ -1,272 +1,203 @@
-body {
-  overflow: scroll;
-}
-
-#batches-container {
-  min-height: 100vh;
-  width: 166.66vw;
-
-  position: relative;
-  margin: auto;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  cursor: grab;
-  user-select: none;
-
-  transform-origin: 0 0;
-
-  transition: width .15s linear;
-
-  &:active {
-    cursor: grabbing;
-  }
-
-  &.scale-1 {
-    width: 125vw;
-  }
-
-  &.scale-2 {
-    width: 166.66vw;
-  }
-
-  &.scale-3 {
-    width: 208.325vw;
-  }
-
-  &.scale-4 {
-    width: 250vw;
-  }
-
-  &.scale-5 {
-    width: 291.66vw;
-  }
-
-  &.scale-6 {
-    width: 333.33vw;
-  }
-}
-
-.vertical-whitespace {
-  width: 100%;
-  height: 20vw;
-}
-
-.batches-col {
-  width: 20%;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.batch {
-  width: 100%;
-  position: relative;
-}
-
-.batch-front {
-  margin: 0;
-  padding: 0;
-
+.students {
   display: flex;
   justify-content: center;
+  align-items: center;
   align-content: center;
   flex-wrap: wrap;
+  align-items: flex-start;
+
+  height: 100%;
+  min-height: 100vh;
+  max-height: 100%;
+
+  margin: 0 auto;
 }
 
-.batch:hover, .batch.focused {
-  svg {
-    opacity: 0.6;
-  }
+.students-list-item {
+  width: 14%;
 }
 
-.batch-back {
+.student-card {
+  position: relative;
+}
+
+.card-back, .card-back-1, .card-back-2 {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
   left: 0;
+  right: 0;
+
+  cursor: pointer;
+  background: #212121;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .wagon-btn-style {
+    background-color: #D23333;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 1);
+    transition: border-color .2s ease;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+
+    &:hover {
+      color: rgba(255, 255, 255, 1.2);
+      border-color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+    }
+  }
+
+// Just for removing the border around the button when clicked
+.wagon-btn-style:focus,
+.wagon-btn-style:active:focus,
+.wagon-btn-style.active:focus,
+.wagon-btn-style.focus,
+.wagon-btn-style:active.focus,
+.wagon-btn-style.active.focus {
+  outline: none;
+}
+
+  h2 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: white;
+    font-weight: bold;
+  }
+
+}
+
+.card-wrapper {
+  width: 100%;
+}
+
+figcaption {
+
+  margin: auto;
+  margin-top: 5px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  svg {
-    opacity: 0.10;
-    color: #333333;
-    font-weight: bold;
-    transition: opacity 1s ease;
+  a {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: rgba(255, 255, 255, 0.29);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    transition: border-color .2s ease;
+
+    &:hover, &:focus {
+      color: rgba(255, 255, 255, 0.29);
+      border-color: rgba(255, 255, 255, 0.2);
+      text-decoration: none;
+    }
   }
 }
-
-.student {
-  width: 14.28%;
+// Animation of the card here
+.card-back-0, .card-front-0 {
+  transition:  transform .5s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-ul {
-  list-style: none;
+.card-back-0 {
+  transform: rotate3d(1, 1, 0, -180deg);
 }
 
-.map{
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 180px;
-  padding: 15px;
-
-  display: flex;
-  align-content: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  background-color: hsla(0, 0%, 20%, 0.8);
+.students-list-item.initial .card-back-0, .students-list-item.initial .card-front-0 {
+  transition-duration: 1s;
 }
 
-.map-item {
-  width: 33.33%;
-  height: 30px;
-  border: 1px solid transparent;
-  background-color: white;
-  background-clip: padding-box;
-  cursor: pointer;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
-}
-body {
-  overflow: scroll;
+.students-list-item:hover .card-back-0, .students-list-item.hovered .card-back-0 {
+  transform: rotate3d(1, 1, 0, 0);
 }
 
-#batches-container {
-  min-height: 100vh;
-  width: 166.66vw;
-
-  position: relative;
-  margin: auto;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  cursor: grab;
-  user-select: none;
-
-  transform-origin: 0 0;
-
-  transition: width .15s linear;
-
-  &:active {
-    cursor: grabbing;
-  }
-
-  &.scale-1 {
-    width: 125vw;
-  }
-
-  &.scale-2 {
-    width: 166.66vw;
-  }
-
-  &.scale-3 {
-    width: 208.325vw;
-  }
-
-  &.scale-4 {
-    width: 250vw;
-  }
-
-  &.scale-5 {
-    width: 291.66vw;
-  }
-
-  &.scale-6 {
-    width: 333.33vw;
-  }
+.students-list-item:hover .card-front-0, .students-list-item.hovered .card-front-0 {
+  transform: rotate3d(1, 1, 0, -180deg);
 }
 
-.vertical-whitespace {
-  width: 100%;
-  height: 20vw;
+.card-back-1, .card-front-1 {
+    transition:  transform .5s ease;
+  -webkit-backface-visibility: hidden;
 }
 
-.batches-col {
-  width: 20%;
-
-  display: flex;
-  flex-direction: column;
+.card-back-1, .card-front-1 {
+  transition: 0.4s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-.batch {
-  width: 100%;
-  position: relative;
+.card-back-1 {
+  transform: rotateY(-180deg);
 }
 
-.batch-front {
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+.students-list-item.initial .card-back-1, .students-list-item.initial .card-front-1 {
+  transition-duration: 1s;
 }
 
-.batch:hover, .batch.focused {
-  svg {
-    opacity: 0.6;
-  }
+.students-list-item:hover .card-back-1, .students-list-item.hovered .card-back-1 {
+  transform: rotateY(0);
 }
 
-.batch-back {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  svg {
-    opacity: 0.10;
-    color: #333333;
-    font-weight: bold;
-    transition: opacity 1s ease;
-  }
+.students-list-item:hover .card-front-1, .students-list-item.hovered .card-front-1 {
+  transform: rotateY(180deg);
 }
 
-.student {
-  width: 14.28%;
+.card-back-2, .card-front-2 {
+  transition: 0.4s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
-ul {
-  list-style: none;
+.card-back-2 {
+  transform: rotateX(-180deg);
 }
 
-.map{
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 180px;
-  padding: 15px;
-
-  display: flex;
-  align-content: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  background-color: hsla(0, 0%, 20%, 0.8);
+.students-list-item.initial .card-back-2, .students-list-item.initial .card-front-2 {
+  transition-duration: 1s;
 }
 
-.map-item {
-  width: 33.33%;
-  height: 30px;
-  border: 1px solid transparent;
-  background-color: white;
-  background-clip: padding-box;
-  cursor: pointer;
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.7);
-  }
+.students-list-item:hover .card-back-2, .students-list-item.hovered .card-back-2 {
+  transform: rotateX(0);
+}
+
+.students-list-item:hover .card-front-2, .students-list-item.hovered .card-front-2 {
+  transform: rotateX(180deg);
+}
+
+.card-back-3, .card-front-3 {
+  transition: 0.4s all ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back-3 {
+  opacity:0;
+}
+
+.students-list-item.initial .card-back-3, .students-list-item.initial .card-front-3 {
+  transition-duration: 0.5s;
+}
+
+.students-list-item:hover .card-back-3, .students-list-item.hovered .card-back-3 {
+  opacity:1;
+}
+
+.students-list-item:hover .card-front-3, .students-list-item.hovered .card-front-3 {
+  opacity:1;
 }
