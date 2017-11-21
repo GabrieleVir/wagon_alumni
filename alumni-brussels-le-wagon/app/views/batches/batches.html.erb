@@ -1,2 +1,36 @@
-<h1>Batches#batches</h1>
-<p>Find me in app/views/batches/batches.html.erb</p>
+<div class='batches-container'>
+  <% @batches.each_with_index do |batch, index| %>
+    <div class='batch-item-container' id='batch-<%= batch.name %>'>
+      <div class='batch-item'>
+        <div class='batch-item-thumb' style="background-image: linear-gradient(to left, <%= batch_gradient_color(index) %>), url('<%= image_path(batch.picture) %>')">
+          <div class='batch-item-content'>
+            <div>
+              <div class='batch-item-content-title'>
+                Le <span class='middle-sep'></span> Wagon <span class='middle-sep'></span>
+                Batch <span class='middle-sep'></span> <%= batch.name %> <span class='end-sep'>¬</span>
+              </div>
+              <div class='batch-item-content-tagline'>
+                <span><%#wait students= batch.total %> students</span> learn to <span>code & build</span> applications in Amsterdam during 12 weeks.
+                <p><%= date_start_month(batch.date_start) %> - <%= date_end_month_and_year(batch.date_end) %></p>
+              </div>
+              <div class='batch-item-content-btn'>
+                <%= link_to 'Our students', "batches/#{batch.name}/" %>
+                <% if (0 === 0) #batch.students.project_id %>
+                  <%= link_to 'Their projects', "http://alumni.lewagon.org/batches/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
+                <% end %>
+                <% if batch.previous_batch %>
+                  <a href="#batch-20" class="is-outlined">Previous batch</a>
+                <% elsif batch.next_batch %>
+                  <a href="#batch-20" class="is-outlined">Next batch</a>
+                <% end %>
+                <% if batch == @batches.first %>
+                  <%= link_to 'Le Wagon', "http://lewagon.com/amsterdam", target: '_blank', class: 'is-outlined' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
