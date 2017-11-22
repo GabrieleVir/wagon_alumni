@@ -1,0 +1,85 @@
+/**
+ * COLORS variables
+ */
+
+// For example:
+$red: #D23333; //Le wagon's red
+$blue: #469AE0;
+$yellow: #FDB631;
+$orange: #E67E22;
+$green: #32B796;
+$gray: #000000;
+$light-gray: #F4F4F4;
+
+
+// Import Google fonts
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
+@import url("https://cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css");
+
+// Define fonts for body and headers
+$body-font: "Lato", "Helvetica", "sans-serif";
+$headers-font: "Lato", "Helvetica", "sans-serif";
+
+// To use a font file (.woff) uncomment following lines
+// @font-face {
+//   font-family: "Font Name";
+//   src: font-url('FontFile.eot');
+//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+//        font-url('FontFile.woff') format('woff'),
+//        font-url('FontFile.ttf') format('truetype')
+// }
+// $my-font: "Font Name";
+/* -------------------------------------
+ * Fonts
+ * ------------------------------------- */
+// Google fonts
+
+// Font-size and line-height
+$base-size: 16px;
+$base-height: 1.4;
+
+/* -------------------------------------
+ * Colors
+ * ------------------------------------- */
+// Scheme
+$brand-color: #D23333;
+
+$red: #EE5F5B;
+$blue: #469AE0;
+$yellow: #FDB631;
+$orange: #E67E22;
+$green: #32B796;
+
+// Gray scale
+$gray-darker:  lighten(#000, 13.5%); // #222
+$gray-dark:    lighten(#000, 20%);   // #333
+$gray:         lighten(#000, 33.5%); // #555
+$gray-light:   lighten(#000, 46.7%); // #777
+$gray-lighter: lighten(#000, 93.5%); // #eee
+
+
+
+/**
+ * BOOTSTRAP overriding variables
+ */
+
+// General style
+$font-family-sans-serif:  $body-font;
+$headings-font-family:    $headers-font;
+$body-bg:                 white;
+$font-size-base: 18px;
+
+// Colors
+$gray-base:       $gray;
+$brand-primary:   $blue;
+$brand-success:   $green;
+$brand-info:      $yellow;
+$brand-danger:    $red;
+$brand-warning:   $orange;
+
+// Buttons & inputs' radius
+$border-radius-base:  2px;
+$border-radius-large: 2px;
+$border-radius-small: 2px;
+
+// Override other variables below!

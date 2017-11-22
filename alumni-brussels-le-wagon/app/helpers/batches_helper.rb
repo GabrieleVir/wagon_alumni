@@ -1,6 +1,5 @@
 module BatchesHelper
 
-<<<<<<< HEAD
   ### HELPERS from Middleman project
 
   # def batches_in_3_cols

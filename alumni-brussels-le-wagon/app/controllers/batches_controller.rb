@@ -5,7 +5,8 @@ class BatchesController < ApplicationController
   end
 
   def batch_students
-    @students = Student.where(batch_id: params[:id])
+    @batch = Batch.where(name: params[:batch]).take
+    @students = Student.where(batch_id: @batch.id)
   end
 
 end
