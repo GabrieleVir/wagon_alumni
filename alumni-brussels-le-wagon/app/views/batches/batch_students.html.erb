@@ -1,7 +1,7 @@
 <a href="<%= root_path %>" id="cross"><i class='mdi mdi-close'></i></a>
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
-    <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item">
+    <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item per-row-<%= students_per_row(@students.size) %>">
       <figure class="student-card">
         <div class="card-front card-front-0">
           <%= image_tag "batches/batch-#{@batch.name}/#{student.picture}", class: "img-responsive" %>
@@ -9,25 +9,21 @@
         <div class="card-back card-back-0">
           <div class="card-wrapper">
             <h2><%= student.first_name %></h2>
-
-            <figcaption>
-
-              <% link_to student.portfolio_url, target: '_blank' do %>
-                <i class='mdi-link-variant mdi'></i>
-              <% end %>
-
-              <% if student.github_url %>
-                <% link_to student.github, target: '_blank' do %>
-                  <i class='mdi-github-circle mdi'></i>
+            <% unless student.fake %>
+              <figcaption>
+                <%= link_to student.portfolio_url, target: '_blank' do %>
+                  <i class='mdi-link-variant mdi'></i>
                 <% end %>
-              <% end %>
-
-            </figcaption>
-            <% if false %>
-              <% if student.fake && student.home %>
-                <% link_to root do %>
-                  <button class="wagon-btn-style">Home</button>
+                <% if student.github_url %>
+                  <%= link_to student.github, target: '_blank' do %>
+                    <i class='mdi-github-circle mdi'></i>
+                  <% end %>
                 <% end %>
+              </figcaption>
+            <% end %>
+            <% if student.fake && student.first_name == "Batch #{@batch.name}" %>
+              <%= link_to root_path do %>
+                <button class="wagon-btn-style">Home</button>
               <% end %>
             <% end %>
           </div>
