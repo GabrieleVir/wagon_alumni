@@ -11,7 +11,6 @@ $(document).ready(function(){
     var id = $(this).attr('id');
     var next = $(this).data('next');
     var prev = $(this).data('previous');
-    console.log(prev);
     var href = $(this).attr('data-href');
     //You can click only if it is not a fake
     if(!$(this).data('fake')) {
@@ -109,7 +108,7 @@ $(document).ready(function(){
 
   //Get the news data-prev and next for the modals
   function populateModalWithId(id) {
-    var el = $('#' + id);
+    var el = $("#" + id);
 
     if ($(el).length && !$(el).data('fake')) {
       initModal(id, el.data('href'), el.data('previous'), el.data('next'));

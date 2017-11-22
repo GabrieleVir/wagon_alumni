@@ -1,6 +1,7 @@
+<a href="<%= root_path %>" id="cross"><i class='mdi mdi-close'></i></a>
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
-    <li class="students-list-item">
+    <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item">
       <figure class="student-card">
         <div class="card-front card-front-0">
           <%= image_tag "batches/batch-#{@batch.name}/#{student.picture}", class: "img-responsive" %>
