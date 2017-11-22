@@ -32,3 +32,6 @@ en:
       month: "%B"
       month_year: "%B %Y"
       default: "%D %m %Y"
+  modal:
+    link_portfolio_tooltip: "Open the portfolio on a new tab"
+    link_github_tooltip: "Open his/her github profile on a new tab"
