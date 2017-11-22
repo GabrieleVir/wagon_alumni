@@ -1,7 +1,8 @@
+@import 'base/*';
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@import 'base/*';
 @import 'batches/*';
 @import 'projects/*';
 @import 'students/*';
