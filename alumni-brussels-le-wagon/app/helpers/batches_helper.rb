@@ -80,13 +80,4 @@ module BatchesHelper
     end
   end
 
-  def date_start_month(date)
-    date = date.strftime("%B")
-    "#{date}"
-  end
-
-  def date_end_month_and_year(date)
-    date = date.strftime("%B %Y")
-    "#{date}"
-  end
 end

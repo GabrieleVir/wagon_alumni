@@ -10,18 +10,18 @@
                 Batch <span class='middle-sep'></span> <%= batch.name %> <span class='end-sep'>¬</span>
               </div>
               <div class='batch-item-content-tagline'>
-                <span><%#wait students= batch.total %> students</span> learn to <span>code & build</span> applications in Amsterdam during 12 weeks.
-                <p><%= date_start_month(batch.date_start) %> - <%= date_end_month_and_year(batch.date_end) %></p>
+                <%= t('.description_batch'), total_students: batch.students.count %>
+                <p><%= l(batch.date_start, format: :month) %> - <%= l(batch.date_end, format: :month_year) %></p>
               </div>
               <div class='batch-item-content-btn'>
-                <%= link_to 'Our students', "batches/#{batch.name}/" %>
+                <%= link_to t('.link_to_students'), "batches/#{batch.name}/" %>
                 <% if (0 === 0) #batch.students.project_id %>
-                  <%= link_to 'Their projects', "http://alumni.lewagon.org/batches/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
+                  <%= link_to t('.link_to_projects'), "http://alumni.lewagon.org/batches/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
                 <% end %>
                 <% if batch.previous_batch %>
-                  <a href="#batch-20" class="is-outlined">Previous batch</a>
+                  <a href="#batch-20" class="is-outlined"><%= t('.previous_batch') %></a>
                 <% elsif batch.next_batch %>
-                  <a href="#batch-20" class="is-outlined">Next batch</a>
+                  <a href="#batch-20" class="is-outlined"><%= t('.next_batch') %></a>
                 <% end %>
                 <% if batch == @batches.first %>
                   <%= link_to 'Le Wagon', "http://lewagon.com/amsterdam", target: '_blank', class: 'is-outlined' %>

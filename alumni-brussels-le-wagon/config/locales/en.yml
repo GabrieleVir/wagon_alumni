@@ -22,10 +22,13 @@
 en:
   hello: "Hello world"
   batches:
-    description_batch: "<span>#{number of students} students </span> learn to <span>code & build</span> applications in Brussels during 12 weeks."
-    date: "date_start_month(batch.date_start) - date_end_month_and_year(batch.date_end)"
+    description_batch: "<span>%{total_students} students </span> learn to <span>code & build</span> applications in Brussels during 12 weeks."
     link_to_students: "Our students"
     link_to_projects: "Their projects"
     previous_batch: "Previous batch"
     next_batch: "Next batch"
-
+  date:
+    formats:
+      month: "%B"
+      month_year: "%B %Y"
+      default: "%D %m %Y"
