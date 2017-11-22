@@ -22,7 +22,7 @@
 en:
   hello: "Hello world"
   batches:
-    description_batch: "<span>%{total_students} students </span> learn to <span>code & build</span> applications in Brussels during 12 weeks."
+    description_batch_html: "<span>%{total_students} students </span> learn to <span>code & build</span> applications in Brussels during 12 weeks."
     link_to_students: "Our students"
     link_to_projects: "Their projects"
     previous_batch: "Previous batch"
