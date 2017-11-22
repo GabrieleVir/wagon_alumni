@@ -1,2 +1,14 @@
 fr:
-  hello: "Bonjour monde"
+  hello: "Hello world"
+  batches:
+    description_batch_html: "<span>%{total_students} étudiants</span> apprennent <span> à coder & construire</span> des applications à Bruxelles pendant 12 semaines."
+    link_to_students: "Nos étudiants"
+    link_to_projects: "Leurs projets"
+    previous_batch: "Batch précédent"
+    next_batch: "Batch suivant"
+  date:
+    month_names: [~, Janvier, Février, Mars, Avril, Mai, Juin, Juillet, Août, Septembre, Octobre, Novembre, Décembre]
+    formats:
+      month: "%B"
+      month_year: "%B %Y"
+      default: "%D %m %Y"
