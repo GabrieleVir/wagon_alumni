@@ -14,17 +14,17 @@
                 <p><%= l(batch.date_start, format: :month) %> - <%= l(batch.date_end, format: :month_year) %></p>
               </div>
               <div class='batch-item-content-btn'>
-                <%= link_to t('batches.link_to_students'), "batches/#{batch.name}/" %>
+                <%= link_to t('batches.link_to_students'), "#{I18n.locale}/batches/#{batch.name}/" %>
                 <% if project_exists?(batch) %>
-                  <%= link_to t('batches.link_to_projects'), "http://alumni.lewagon.org/batches/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
+                  <%= link_to t('batches.link_to_projects'), "http://alumni.lewagon.org/#{I18n.locale}/demoday/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
                 <% end %>
                 <% if batch.previous_batch %>
-                  <a href="#batch-20" class="is-outlined"><%= t('batches.previous_batch') %></a>
+                  <a href="#batch-<%= batch.previous_batch %>" class="is-outlined"><%= t('batches.previous_batch') %></a>
                 <% elsif batch.next_batch %>
-                  <a href="#batch-20" class="is-outlined"><%= t('batches.next_batch') %></a>
+                  <a href="#batch-<%= batch.next_batch %>" class="is-outlined"><%= t('batches.next_batch') %></a>
                 <% end %>
                 <% if batch == @batches.first %>
-                  <%= link_to 'Le Wagon', "http://lewagon.com/amsterdam", target: '_blank', class: 'is-outlined' %>
+                  <%= link_to 'Le Wagon', "http://lewagon.com/#{I18n.locale}/brussels", target: '_blank', class: 'is-outlined' %>
                 <% end %>
               </div>
             </div>
