@@ -75,7 +75,6 @@ $(document).on('turbolinks:load', function() {
 
     //For the link
     $('.modal-student-url').attr('href', href)
-    $('.modal-student-url span').text(href);
     $('.modal-student-container iframe').attr('src', href);
 
     initArrows(prev, next)
