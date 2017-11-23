@@ -1,4 +1,4 @@
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
 
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
