@@ -69,4 +69,15 @@ module BatchesHelper
     end
     return false
   end
+
+  def students_per_row(total_students)
+    ref_total_cards = [15, 18, 21, 24, 28, 35, 40, 45]
+    ref_per_row = [5, 6, 7, 6, 7, 7, 8, 9]
+    i = 0
+    while total_students > ref_total_cards[i] && i < ref_total_cards.length
+      i += 1
+    end
+    ref_per_row[i]
+  end
+
 end
