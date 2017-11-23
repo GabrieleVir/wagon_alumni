@@ -11,7 +11,7 @@
             <h2><%= student.first_name %></h2>
             <% unless student.fake %>
               <figcaption>
-                <%= link_to student.portfolio_url, target: '_blank' do %>
+                <%= link_to student.portfolio_url, class: 'link-in-card', target: '_blank' do %>
                   <i class='mdi-link-variant mdi'></i>
                 <% end %>
                 <% if student.github_url %>
