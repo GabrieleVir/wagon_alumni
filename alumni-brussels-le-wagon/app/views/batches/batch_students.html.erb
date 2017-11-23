@@ -1,4 +1,4 @@
-<a href="<%= root_path %>" id="cross"><i class='mdi mdi-close'></i></a>
+<a href="<%= root_path(I18n.locale) %>" id="cross"><i class='mdi mdi-close'></i></a>
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
     <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item per-row-<%= students_per_row(@students.size) %>">
@@ -22,7 +22,7 @@
               </figcaption>
             <% end %>
             <% if student.fake && student.first_name == "Batch #{@batch.name}" %>
-              <%= link_to root_path do %>
+              <%= link_to root_path(I18n.locale) do %>
                 <button class="wagon-btn-style">Home</button>
               <% end %>
             <% end %>
