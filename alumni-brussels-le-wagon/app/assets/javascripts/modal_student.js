@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function() {
     escapeFromModal();
   });
 
-  $('.modal-student, .link-in-card').on('click', function(e) { e.stopPropagation() });
+  $('.modal-student, .link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
 
 
   // click on arrows
