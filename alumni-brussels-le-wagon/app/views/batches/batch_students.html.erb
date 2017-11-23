@@ -15,7 +15,7 @@
                   <i class='mdi-link-variant mdi'></i>
                 <% end %>
                 <% if student.github_url %>
-                  <%= link_to student.github, target: '_blank' do %>
+                  <%= link_to student.github_url,class: 'github-in-card', target: '_blank' do %>
                     <i class='mdi-github-circle mdi'></i>
                   <% end %>
                 <% end %>
