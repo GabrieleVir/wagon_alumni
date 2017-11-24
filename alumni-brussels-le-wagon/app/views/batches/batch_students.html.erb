@@ -1,5 +1,5 @@
 <%= render partial: 'layouts/header', locals: { title: @title, subtitle: @subtitle } %>
-<%= link_to root_path, id: 'cross' do %>
+<%= link_to root_path(I18n.locale), id: 'cross' do %>
   <i class='mdi mdi-close'></i>
 <% end %>
 <section class="students">
@@ -15,18 +15,18 @@
             <h2><%= student.first_name %></h2>
             <% unless student.fake %>
               <figcaption>
-                <%= link_to student.portfolio_url, target: '_blank' do %>
+                <%= link_to student.portfolio_url, class: 'link-in-card', target: '_blank' do %>
                   <i class='mdi-link-variant mdi'></i>
                 <% end %>
                 <% if student.github_url %>
-                  <%= link_to student.github, target: '_blank' do %>
+                  <%= link_to student.github_url,class: 'github-in-card', target: '_blank' do %>
                     <i class='mdi-github-circle mdi'></i>
                   <% end %>
                 <% end %>
               </figcaption>
             <% end %>
             <% if student.fake && student.first_name == "Batch #{@batch.name}" %>
-              <%= link_to root_path do %>
+              <%= link_to root_path(I18n.locale) do %>
                 <button class="wagon-btn-style">Home</button>
               <% end %>
             <% end %>

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
 
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
@@ -32,9 +32,18 @@ $(document).ready(function(){
     }
   })
 
+  // click out modal
+  $(document).on('click', '.modal-student-container', function() {
+    escapeFromModal();
+  });
+
+  $('.modal-student, .link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
+
+
   // click on arrows
-  $('.modal-student-arrow').on('click', function() {
+  $('.modal-student-arrow').on('click', function(e) {
     var id = $(this).attr('data-id');
+    e.stopPropagation();
 
     if (id) {
       populateModalWithId(id);
@@ -65,7 +74,6 @@ $(document).ready(function(){
 
     //For the link
     $('.modal-student-url').attr('href', href)
-    $('.modal-student-url span').text(href);
     $('.modal-student-container iframe').attr('src', href);
 
     initArrows(prev, next)
