@@ -12,3 +12,4 @@ fr:
       month: "%B"
       month_year: "%B %Y"
       default: "%D %m %Y"
+  city: "Bruxelles"
