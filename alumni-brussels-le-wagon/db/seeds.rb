@@ -35,11 +35,11 @@ Student_list = [
   ['Thomas', nil, 'https://github.com/Sohett', 'http://www.lrjbrual.com/', nil, 'thomas.png', false],
   ['Lynn', nil, 'https://github.com/LynnVanderhallen', 'http://merelsteenbrink.github.io/portofolio/', nil, 'lynn.png', false],
   ['Maxim', nil, 'https://github.com/MaximPiessen', 'http://merelsteenbrink.github.io/portofolio/', nil, 'maxim.png', false],
-  ['Philippe', nil, nil, 'http://micky0806.github.io/portfolio/', nil, 'philippe.png', false],
+  ['Philippe', nil, 'https://github.com/filouzzz', 'http://micky0806.github.io/portfolio/', nil, 'philippe.png', false],
   ['Pablo', nil, 'https://github.com/pablocm90', 'http://feiko1.github.io/portfolio/', nil, 'pablo.png', false],
   ['Pierre', nil, 'https://github.com/pierrecollinet', 'https://nadyaa1.github.io/portfolio/', nil, 'pierre.png', false],
   ['Madeline', nil, 'https://github.com/madoleary', 'https://nadyaa1.github.io/portfolio/', nil, 'madeline.png', false],
-  ['Jun Joseph', nil, nil, 'https://nadyaa1.github.io/portfolio/', nil, 'jun_joseph.png', false],
+  ['Jun Joseph', nil, 'https://github.com/jjpad', 'https://nadyaa1.github.io/portfolio/', nil, 'jun_joseph.png', false],
   ['Louise', nil, 'https://github.com/louisepicot', 'https://nadyaa1.github.io/portfolio/', nil, 'louise.png', false],
   ['Batch 96', nil, nil, 'https://www.lewagon.com/fr', nil, 'lewagon.png', true]
 ]
