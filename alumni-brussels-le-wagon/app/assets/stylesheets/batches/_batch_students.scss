@@ -7,6 +7,7 @@
     align-items: baseline;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-left: 30px;
   }
 
   .title, .subtitle {
@@ -52,6 +53,18 @@
 
 .per-row-9 {
   width: 11.11%;
+}
+
+.students-list-item {
+  @media (max-width: 1000px) {
+    width: 25%;
+  }
+  @media (max-width: 800px) {
+    width: 33.33%;
+  }
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 }
 
 .student-card {
@@ -239,13 +252,13 @@ figcaption {
   opacity:1;
 }
 
-.batch-title{
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin: 14px;
-  z-index: 2;
-}
+// .batch-title{
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   margin: 14px;
+//   z-index: 2;
+// }
 
 #cross {
   position: fixed;
@@ -263,6 +276,7 @@ figcaption {
   cursor: pointer;
   opacity: .5;
   text-decoration:none;
+  z-index: 2;
 
   @media (max-width: 1000px) {
     width: 50px;
