@@ -1,4 +1,8 @@
-<a href="<%= root_path(I18n.locale) %>" id="cross"><i class='mdi mdi-close'></i></a>
+<%= render partial: 'layouts/header', locals: { title: @title, subtitle: @subtitle } %>
+<%= link_to root_path(I18n.locale), id: 'cross' do %>
+  <i class='mdi mdi-close'></i>
+<% end %>
+<section class="students">
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
     <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item per-row-<%= students_per_row(@students.size) %>">
@@ -30,8 +34,7 @@
         </div>
       </figure>
     </li>
-
   <% end %>
 </ul>
-
+</section>
 <%= render 'layouts/modal_student' %>

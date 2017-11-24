@@ -1,3 +1,24 @@
+.header {
+  color: $brand-color;
+  min-height: 80px;
+
+  .header-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .title, .subtitle {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  .title {
+    font-weight: bold;
+  }
+}
+
 .students {
   display: flex;
   justify-content: center;
@@ -7,7 +28,7 @@
   align-items: flex-start;
 
   height: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 80px);
   max-height: 100%;
 
   margin: 0 auto;
@@ -216,6 +237,14 @@ figcaption {
 
 .students-list-item:hover .card-front-3, .students-list-item.hovered .card-front-3 {
   opacity:1;
+}
+
+.batch-title{
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 14px;
+  z-index: 2;
 }
 
 #cross {
