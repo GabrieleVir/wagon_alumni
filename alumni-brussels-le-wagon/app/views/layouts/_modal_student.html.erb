@@ -27,12 +27,18 @@
       <div class="project-container col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-2">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-center modal-project-title"> <%= @projects.first.name %></h2>
+            <h2 class="text-center">Project <span class="modal-project-title"><%= @projects.first.name %></span></h2>
           </div>
         </div>
         <div class="row">
           <div class="modal-project-description col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-lg-8 col-lg-offset-2">
+            <h2 class="">Description:</h2><br/>
             <p class=""><%= @projects.first.description %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-lg-8 col-lg-offset-2">
+            <h3 class="">Students that worked on this project : </h3>
           </div>
         </div>
         <div class="row student-flex-container">
