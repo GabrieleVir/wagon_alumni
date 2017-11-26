@@ -1,6 +1,6 @@
-<section class='modal-student-container'>
-  <div class='modal-student-cross'><i class='mdi mdi-close'></i></div>
-  <div>
+  <!-- left navbar-->
+  <div class="nav-items">
+    <div class='modal-student-cross'><i class='mdi mdi-close'></i></div>
     <div class='modal-student-arrows'>
       <a class='modal-student-arrow is-prev' data-toggle="tooltip" data-placement="right" data-trigger="hover">
         <span class='modal-student-arrow-img'></span>
@@ -11,19 +11,45 @@
         <i class='mdi-chevron-right mdi'></i>
       </a>
     </div>
+    <div class="modal-student-avatar">
+      <a class='modal-student-avatar' data-toggle="tooltip" data-placement="right" data-trigger='hover'>
+      </a>
+    </div>
   </div>
-  <div class="modal-student-avatar">
-    <a class='modal-student-avatar' data-toggle="tooltip" data-placement="right" data-trigger='hover'>
-    </a>
-  </div>
-  <a class='modal-student-github' target='_blank' data-toggle="tooltip" data-placement="right" title='<%= t("modal.link_github_tooltip") %>'>
-    <i class='mdi-github-circle mdi'></i></a>
-  </a>
-  <a class='modal-student-url' target='_blank' data-toggle="tooltip" data-placement="right" title='<%= t("modal.link_portfolio_tooltip") %>'>
-    <i class='mdi mdi-link-variant'></i> <span></span>
-  </a>
+<section class='modal-student-container'>
+  <!-- github and project button-->
   <section class='modal-student'>
-    <iframe></iframe>
+    <a class='modal-student-url' target='_blank' data-toggle="tooltip" data-placement="right" title='<%= t("modal.link_portfolio_tooltip") %>'>
+      <button class="btn btn-primary"><i class='mdi mdi-link-variant'></i></button> <span></span>
+    </a>
+    <div class="col-md-12">
+      <!-- project container -->
+      <div class="project-container col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-2">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center modal-project-title"> <%= @Project.first.name %></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="modal-project-description col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-lg-8 col-lg-offset-2">
+            <p class="">Project.description</p>
+          </div>
+        </div>
+        <div class="row student-flex-container">
+          <div class="modal-project-students student-flex-item">
+            <img src="/assets/batches/batch-96/alexandre.png" alt="">
+            <div class="container-name_github">
+              <div class="student-name-item"><p>Alexandre</p></div>
+              <div class="student-github-item">
+                <a class='modal-student-github' target='_blank' data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
+                  <i class='mdi-github-circle mdi'></i></a>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </section>
 

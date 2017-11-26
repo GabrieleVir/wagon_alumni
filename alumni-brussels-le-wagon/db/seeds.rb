@@ -15,13 +15,12 @@ Batch_list.each do |name, date_start, date_end, previous_batch, next_batch, pict
 end
 
 # Eleve qui manque la photo:
-# Jerome
 # Yass
 Student_list = [
   ['Alexandre', nil, 'https://github.com/VKAlex95', 'http://aafke89.github.io/portfolio/', nil, 'alexandre.png', false],
   ['Carmen', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', nil, 'carmen.png', false],
   ['Diogo', nil, 'https://github.com/eltigredc', 'http://dimmaaah.github.io/portfolio/', nil, 'diogo.png', false],
-  ['Theo', nil, nil, 'http://waltervanwoudenberg.github.io/portfolio/', nil, 'theo.png', false],
+  ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', nil, 'theo.png', false],
   ['Sasha', nil, 'https://github.com/sashamanekke', 'http://elyas03.github.io/portfolio/', nil, 'sasha.png', false],
   ['Chris', nil, 'https://github.com/piks3l', 'http://milou121.github.io/portfolio/', nil, 'chris.png', false],
   ['Hasna', nil, 'https://github.com/quiko', 'http://flehodey.github.io/portfolio/', nil, 'hasna.png', false],
@@ -46,4 +45,12 @@ Student_list = [
 
 Student_list.each do |first_name, last_name, github, portfolio, project, picture, fake|
   Student.create(first_name: first_name, last_name: last_name, github_url: github, portfolio_url: portfolio, batch_id: 1, project_id: project, picture: picture, fake: fake)
+end
+
+Project_list = [
+  ['NoodlePoodl', 'Fun & Fairness in decision making: A tool based on visual AB-testing (also an addictive game 🎮 )', 'Amusant et juste dans la prise de décision: Un outils basé sur le test A/B visuel (c\'est aussi un jeu addictif 🎮)']
+]
+
+Project_list.each do |name, description, description_fr|
+  Project.create(name: name, description: description, description_fr: description_fr)
 end

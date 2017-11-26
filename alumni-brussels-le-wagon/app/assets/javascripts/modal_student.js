@@ -3,6 +3,7 @@ $(document).on('turbolinks:load', function() {
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
     populateModalWithId(parseParam('student'));
+
   }
 
   // Clicking on a card
@@ -66,6 +67,8 @@ $(document).on('turbolinks:load', function() {
     var avatarUrl = $("#" + id).find('img').attr('src');
     var name = $('#' + id).find('h2').text();
     $('.modal-student-container').addClass('is-active');
+    $('.nav-items').addClass('is-active');
+    $('.container').addClass('no-scroll');
 
     //For the avatar
     $('.modal-student-avatar').css('background',"linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('" + avatarUrl + "')")
@@ -74,7 +77,6 @@ $(document).on('turbolinks:load', function() {
 
     //For the link
     $('.modal-student-url').attr('href', href)
-    $('.modal-student-container iframe').attr('src', href);
 
     initArrows(prev, next)
   }
@@ -125,7 +127,8 @@ $(document).on('turbolinks:load', function() {
 
   function closeModal(){
     $('.modal-student-container').removeClass('is-active');
-    $('.modal-student-container iframe').removeAttr('src');
+    $('.nav-items').removeClass('is-active');
+    $('.container').removeClass('no-scroll');
     clearParams();
   }
 

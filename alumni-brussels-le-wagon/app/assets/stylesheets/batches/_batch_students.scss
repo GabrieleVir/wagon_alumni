@@ -1,3 +1,8 @@
+// When the modal is active, the scroll disappear
+.no-scroll {
+  overflow-y: hidden;
+}
+
 .students {
   display: flex;
   justify-content: center;
@@ -5,7 +10,7 @@
   align-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-
+  z-index: 2;
   height: 100%;
   min-height: 100vh;
   max-height: 100%;
