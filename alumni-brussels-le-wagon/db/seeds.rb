@@ -46,7 +46,7 @@ Student_list = [
 Student_list.each do |first_name, last_name, github, portfolio, project, picture, fake|
   Student.create(first_name: first_name, last_name: last_name, github_url: github, portfolio_url: portfolio, batch_id: 1, project_id: project, picture: picture, fake: fake)
 end
-
+# Remi's project not in this list
 Project_list = [
   ['NoodlePoodl', 'Fun & Fairness in decision making: A tool based on visual AB-testing (also an addictive game 🎮 )', 'Amusant et juste dans la prise de décision: Un outils basé sur le test A/B visuel (c\'est aussi un jeu addictif 🎮)', 'http://www.noodlepoll.io/'],
   ['Chapter', 'Discover the world, one chapter at a time', 'Découvrez le monde, un chapitre à la fois', 'https://www.chapter.website/#home'],
