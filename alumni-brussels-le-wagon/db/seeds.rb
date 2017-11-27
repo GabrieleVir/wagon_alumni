@@ -48,9 +48,14 @@ Student_list.each do |first_name, last_name, github, portfolio, project, picture
 end
 
 Project_list = [
-  ['NoodlePoodl', 'Fun & Fairness in decision making: A tool based on visual AB-testing (also an addictive game 🎮 )', 'Amusant et juste dans la prise de décision: Un outils basé sur le test A/B visuel (c\'est aussi un jeu addictif 🎮)']
+  ['NoodlePoodl', 'Fun & Fairness in decision making: A tool based on visual AB-testing (also an addictive game 🎮 )', 'Amusant et juste dans la prise de décision: Un outils basé sur le test A/B visuel (c\'est aussi un jeu addictif 🎮)', 'http://www.noodlepoll.io/'],
+  ['Chapter', 'Discover the world, one chapter at a time', 'Découvrez le monde, un chapitre à la fois', 'https://www.chapter.website/#home'],
+  ['Terms of service;Didn\'t read', '“I have read and agree to the Terms” is the biggest lie on the web. We aim to fix that.', '"J\'ai lu et accepté les Termes" est le plus gros mensong du web. Nous visons à régler ça.', 'https://phoenix.tosdr.org/'],
+  ['Photrea', 'Be part of the collection', 'Faites partie de la collection', 'http://www.photrea.com/'],
+  ['Chronos', 'Digitalize your restaurant', 'Digitalisez votre restaurant', 'https://www.chronos-app.com/'],
+  ['Pilotis', 'Manage registrations and invoices for your organisation', 'Gérer les inscriptions et factures pour votre organisation', 'https://www.pilotis.be/'],
 ]
 
-Project_list.each do |name, description, description_fr|
-  Project.create(name: name, description: description, description_fr: description_fr)
+Project_list.each do |name, description, description_fr, project_url|
+  Project.create(name: name, description: description, description_fr: description_fr, project_url: project_url)
 end
