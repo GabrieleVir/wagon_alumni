@@ -13,7 +13,7 @@
 }
 
 .modal-student {
-  padding-left: 58px;
+  margin-left: 58px;
   width: 100%;
   border-left: 1px solid #f0efef;
 
@@ -288,6 +288,9 @@
 .modal-project-title {
   margin-bottom:1em;
   color: $red;
+  &:hover {
+    color: $red;
+  }
 }
 
 .modal-project-description {

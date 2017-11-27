@@ -19,15 +19,12 @@
 <section class='modal-student-container'>
   <!-- github and project button-->
   <section class='modal-student'>
-    <a class='modal-student-url' target='_blank' data-toggle="tooltip" data-placement="right" title='<%= t("modal.link_portfolio_tooltip") %>'>
-      <button class="btn btn-primary"><i class='mdi mdi-link-variant'></i></button> <span></span>
-    </a>
     <div class="col-md-12">
       <!-- project container -->
       <div class="project-container col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-xs-8 col-xs-offset-2 col-lg-8 col-lg-offset-2">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-center">Project <span class="modal-project-title"><%= @projects.first.name %></span></h2>
+            <h2 class="text-center">Project <a class="modal-project-title"><%= @projects.first.name %></a></h2>
           </div>
         </div>
         <div class="row">

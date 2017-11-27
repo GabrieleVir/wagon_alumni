@@ -34,8 +34,12 @@ $(document).on('turbolinks:load', function() {
   })
 
   // click out modal
-  $(document).on('click', '.modal-student-container', function() {
-    escapeFromModal();
+  $('.modal-student').on('click', function() {
+    closeModal();
+  });
+
+  $('.project-container').on('click', function(e) {
+    e.stopPropagation();
   });
 
   $('.modal-student, .link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
