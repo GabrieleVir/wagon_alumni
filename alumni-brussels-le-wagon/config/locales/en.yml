@@ -20,7 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
   batches:
     description_batch_html: "<span>%{total_students} students </span> learn to <span>code & build</span> applications in Brussels during 12 weeks."
     link_to_students: "Our students"
@@ -35,3 +34,4 @@ en:
   modal:
     link_portfolio_tooltip: "Open the project on Le Wagon website"
     link_github_tooltip: "Open his/her github profile on a new tab"
+  city: "Brussels"
