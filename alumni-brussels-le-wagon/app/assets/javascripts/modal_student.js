@@ -15,9 +15,8 @@ $(document).on('turbolinks:load', function() {
     var href = $(this).attr('data-href');
     //You can click only if it is not a fake
     if(!$(this).data('fake')) {
-      $.ajax({
-        url: "/batches/batch_students",
-        type: "POST",
+      $.get({
+        url: "/batches/" + $('.batch-title').data('batch'),
         data: {name: $(this).val()},
         success: function (data) {
         alert(data);

@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
-
+  z-index:2;
   &.is-active {
     display: flex;
   }
@@ -60,7 +60,7 @@
 
 .modal-student-arrows {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 60px;
   left: 14px;
   @media (max-width: 1000px) {
@@ -262,13 +262,13 @@
   position: fixed;
   top: 20%;
   left: 2%;
-  z-index: 2;
+  z-index: 3;
   background-color: white;
 }
 
 .nav-items {
   background-color: white;
-  z-index: 2;
+  z-index: 3;
   opacity: 1;
   width: 60px;
   position: fixed;
@@ -282,7 +282,7 @@
 }
 
 .modal-student-cross {
-  z-index: 2;
+  z-index: 3;
 }
 
 .modal-project-title {
