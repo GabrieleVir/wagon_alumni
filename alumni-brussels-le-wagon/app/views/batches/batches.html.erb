@@ -1,9 +1,9 @@
-<div class="batch-switch-languages">
-  <%= link_to 'FR', root_path('fr') %>
-  |
-  <%= link_to 'EN', root_path('en') %>
-</div>
 <div class='batches-container'>
+  <div class="batch-switch-languages">
+    <%= link_to 'FR', root_path('fr') %>
+    |
+    <%= link_to 'EN', root_path('en') %>
+  </div>
   <% @batches.each_with_index do |batch, index| %>
     <div class='batch-item-container' id='batch-<%= batch.name %>'>
       <div class='batch-item'>
