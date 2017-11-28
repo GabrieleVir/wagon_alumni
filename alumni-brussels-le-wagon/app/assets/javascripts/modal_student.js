@@ -15,6 +15,14 @@ $(document).on('turbolinks:load', function() {
     var href = $(this).attr('data-href');
     //You can click only if it is not a fake
     if(!$(this).data('fake')) {
+      $.ajax({
+        url: "/batches/batch_students",
+        type: "POST",
+        data: {name: $(this).val()},
+        success: function (data) {
+        alert(data);
+        }
+      });
       addParam('student=' + id);
       initModal(id, href, prev, next);
     }
@@ -81,6 +89,8 @@ $(document).on('turbolinks:load', function() {
 
     //For the link
     $('.modal-student-url').attr('href', href)
+
+
 
     initArrows(prev, next)
   }
