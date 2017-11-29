@@ -9,47 +9,33 @@ $(document).on('turbolinks:load', function() {
   // Clicking on a card
   $('.students-list-item').on('click', function(){
     // Finding all the datas in the DOM
-    var id = $(this).attr('id');
-    var next = $(this).data('next');
-    var prev = $(this).data('previous');
-    var href = $(this).attr('data-href');
+    let id = $(this).attr('id');
+    let next = $(this).data('next');
+    let prev = $(this).data('previous');
+    let href = $(this).attr('data-href');
+    let project_id = $(this).data('project');
     //You can click only if it is not a fake
     if(!$(this).data('fake')) {
-      $.get({
-        url: "/batches/" + $('.batch-title').data('batch'),
-        data: {name: $(this).val()},
-        success: function (data) {
-        alert(data);
-        }
-      });
       addParam('student=' + id);
-      initModal(id, href, prev, next);
+      initModal(id, href, prev, next, project_id);
     }
 
-  })
+  });
 
   //Javascript when the modal is active starts
   $('.modal-student-cross').on('click', function(){
     closeModal();
-  })
+  });
 
   $(document).on('keyup', function(e){
     //If the escape key is clicked, then close the modal
     if(e.keyCode == 27){
       closeModal();
     }
-  })
+  });
 
   // click out modal
-  $('.modal-student').on('click', function() {
-    closeModal();
-  });
-
-  $('.project-container').on('click', function(e) {
-    e.stopPropagation();
-  });
-
-  $('.modal-student, .link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
+  $('.link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
 
 
   // click on arrows
@@ -65,22 +51,13 @@ $(document).on('turbolinks:load', function() {
 
 
   //Functions used for the modal
-  function initModal(id,href,prev,next){
-    /*Everything that has to be added in the modal
-     * id (for all the datas)
-     * href (for the links)
-     * prev (for arrow back)
-     * next (for arrow next)
-     * avatarUrl for the avatar picture
-     * name for the tooltip
-     *There is a condition to put: If the picture is a student then show modal
-     */
+  function initModal(id, href, prev, next, project_id){
+
     var avatarUrl = $("#" + id).find('img').attr('src');
     var name = $('#' + id).find('h2').text();
     $('.modal-student-container').addClass('is-active');
     $('.nav-items').addClass('is-active');
     $('.container').addClass('no-scroll');
-
     //For the avatar
     $('.modal-student-avatar').css('background',"linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('" + avatarUrl + "')")
     //For the tooltip to open
@@ -88,9 +65,24 @@ $(document).on('turbolinks:load', function() {
 
     //For the link
     $('.modal-student-url').attr('href', href)
+    // Ajax call to ajaxController
+    $.ajax({
+      url: "/ajax/" + project_id,
+      data: {},
+      success: function (data) {
+        $('.modal-student-container').html(data);
+        // those functions exists only if the ajax is completed
+          $('.modal-student-container').on('click', function() {
+            closeModal();
+          });
+
+          $('.project-container').on('click', function(e) {
+            e.stopPropagation();
+          });
 
 
-
+      }
+    });
     initArrows(prev, next)
   }
 
@@ -134,14 +126,14 @@ $(document).on('turbolinks:load', function() {
     var el = $("#" + id);
 
     if ($(el).length && !$(el).data('fake')) {
-      initModal(id, el.data('href'), el.data('previous'), el.data('next'));
+      initModal(id, el.data('href'), el.data('previous'), el.data('next'), el.data('project'));
     }
   }
 
   function closeModal(){
     $('.modal-student-container').removeClass('is-active');
+    $('.modal-student-container').html('');
     $('.nav-items').removeClass('is-active');
-    $('.container').removeClass('no-scroll');
     clearParams();
   }
 

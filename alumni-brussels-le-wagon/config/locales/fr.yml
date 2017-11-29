@@ -13,6 +13,9 @@ fr:
       month_year: "%B %Y"
       default: "%D %m %Y"
   modal:
+    project_title: "Projet"
+    project_description: "Description"
+    student_on_project: "Les étudiants qui ont travaillé sur ce projet"
     link_portfolio_tooltip: "Ouvrir le projet sur le site du Le Wagon"
     link_github_tooltip: "Ouvrir son profil github sur un nouvel onglet"
   city: "Bruxelles"

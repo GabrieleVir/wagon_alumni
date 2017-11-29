@@ -14,8 +14,5 @@ class BatchesController < ApplicationController
     @subtitle = "#{l(@batch.date_start, format: :month)} - #{l(@batch.date_end, format: :month_year)}"
   end
 
-  # This action is to give a response to ajax request
-  def modal_students_ajax
-  end
 
 end

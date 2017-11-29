@@ -8,7 +8,7 @@ module StudentsHelper
       project = "data-project=#{student.project_id}"
     end
     #student_fake = student.fake ? "data-fake=\"#{student.fake}\"" : ""
-    return "id=#{id} data-href=#{student.portfolio_url} data-next=#{student_next} data-previous=#{student_previous} <% defined(project) ? project : nil %>" #{student_fake}"
+    return "id=#{id} data-href=#{student.portfolio_url} data-next=#{student_next} data-previous=#{student_previous}  #{defined?(project) ? project : nil} " #{student_fake}
   end
 
   private
