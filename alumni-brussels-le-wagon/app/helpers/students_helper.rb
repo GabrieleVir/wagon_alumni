@@ -7,8 +7,8 @@ module StudentsHelper
     if student.project_id
       project = "data-project=#{student.project_id}"
     end
-    #student_fake = student.fake ? "data-fake=\"#{student.fake}\"" : ""
-    return "id=#{id} data-href=#{student.portfolio_url} data-next=#{student_next} data-previous=#{student_previous}  #{defined?(project) ? project : nil} " #{student_fake}
+    student_fake = student.fake ? "data-fake=\"#{student.fake}\"" : ""
+    return "id=#{id} data-href=#{student.portfolio_url} data-next=#{student_next} data-previous=#{student_previous}  #{defined?(project) ? project : nil}  #{student_fake}"
   end
 
   private
@@ -22,7 +22,7 @@ module StudentsHelper
     return "false" if [nil, all_students.last].include?(sibling_student)
 
     sibling_student_id = id.to_i + step
-    #sibling_student_id += step if sibling_student.fake
+    sibling_student_id += step if sibling_student.fake
     return "#{sibling_student_id.to_s}"
   end
 end

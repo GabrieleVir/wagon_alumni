@@ -29,3 +29,10 @@ function parseParam(val) {
     });
     return result;
 }
+
+function parseUrlI18n(){
+  urlPathname = window.location.pathname
+  // remove the first /
+  parsedUrl = urlPathname.substr(1).split("/");
+  return parsedUrl[0];
+}

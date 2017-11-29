@@ -1,5 +1,4 @@
 $(document).on('turbolinks:load', function() {
-
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
     populateModalWithId(parseParam('student'));
@@ -67,8 +66,8 @@ $(document).on('turbolinks:load', function() {
     $('.modal-student-url').attr('href', href)
     // Ajax call to ajaxController
     $.ajax({
-      url: "/ajax/" + project_id,
-      data: {},
+      url: "/batches/ajax/" + project_id,
+      data: {'_locale': parseUrlI18n},
       success: function (data) {
         $('.modal-student-container').html(data);
         // those functions exists only if the ajax is completed
