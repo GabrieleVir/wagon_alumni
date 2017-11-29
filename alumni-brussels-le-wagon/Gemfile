@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '=5.0.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
+# Use devise for logs
+gem 'devise'
+# Use rails_admin for admin panel
+gem 'rails_admin'
 # Use Bootstrap for rails
 gem 'bootstrap-sass', '~> 3.3.7'
 # Use SCSS for stylesheets

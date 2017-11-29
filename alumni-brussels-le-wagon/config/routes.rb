@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get 'ajax/modal_students'
-
+  devise_for :admins, path: 'admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   scope '(:locale)', locale: /fr|en|nl|de/ do
 
     root to: 'batches#batches'
