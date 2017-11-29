@@ -1,3 +1,4 @@
+
 .header {
   color: $brand-color;
   min-height: 80px;
@@ -27,7 +28,7 @@
   align-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-
+  z-index: 2;
   height: 100%;
   min-height: calc(100vh - 80px);
   max-height: 100%;

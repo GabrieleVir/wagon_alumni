@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'ajax/modal_students'
   devise_for :admins, path: 'admin'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
   scope '(:locale)', locale: /fr|en|nl|de/ do
 
     root to: 'batches#batches'
@@ -17,7 +17,9 @@ Rails.application.routes.draw do
 
     get 'projects/:project' => 'projects#project_details'
 
+    get '/ajax/:project' => 'ajax#modal_students'
   end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
