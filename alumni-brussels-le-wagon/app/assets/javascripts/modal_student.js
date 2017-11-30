@@ -1,4 +1,10 @@
 $(document).on('turbolinks:load', function() {
+
+  // If there is a loader, hide it when the page has loaded
+  if($('.loader')){
+    $('.loader').fadeOut();
+  }
+
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
     populateModalWithId(parseParam('student'));
