@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function() {
 
   });
 
-  //Javascript when the modal is active starts
+  //Clicking out of modal close it
   $('.modal-student-cross').on('click', function(){
     closeModal();
   });
@@ -33,7 +33,7 @@ $(document).on('turbolinks:load', function() {
     }
   });
 
-  // click out modal
+  // clicking here will not close the modal
   $('.link-in-card, .github-in-card').on('click', function(e) { e.stopPropagation() });
 
 

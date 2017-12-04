@@ -9,6 +9,12 @@ $(document).on('turbolinks:load', function() {
   });
 
   //Clicking out of the search bar
+  $('.batches-container').on('click', function(){
+    $('#results').hide();
+  });
+
+  $('#results, .form-control').on('click', function(e) { e.stopPropagation() });
+
 });
 
 

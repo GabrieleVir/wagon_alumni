@@ -23,7 +23,7 @@
                 <p><a href="<%= student.project.project_url %>" target="_blank"> <%= student.project.name %></a></p>
               </td>
               <td>
-                <p> Batch #<%= student.batch.name %></p>
+                <p><%= link_to "Batch \##{student.batch.name}", "#{I18n.locale}/batches/#{student.batch.name}/" %></p>
               </td>
               <td>
                 <a class='modal-student-github' target='_blank' href="<%= student.github_url %>" data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
