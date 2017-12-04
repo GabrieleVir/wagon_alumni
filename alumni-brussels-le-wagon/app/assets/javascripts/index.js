@@ -38,7 +38,10 @@ function search(force) {
     $.ajax({
       type: "GET",
       url: '/batches/batch_search/' + existingString,
-      data: {'_searchLetter': existingString}
+      data: {
+        '_searchLetter': existingString,
+        '_locale': parseUrlI18n
+      }
     }).done(function(response) {
         $('#results').html(response);
         if(response){

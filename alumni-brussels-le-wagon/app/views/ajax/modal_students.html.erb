@@ -11,7 +11,11 @@
         <div class="row">
           <div class="modal-project-description col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-xs-12 col-lg-8 col-lg-offset-2">
             <h2 class=""><%= t('modal.project_description') %></h2><br/>
-            <p class=""><%= @project.description %></p>
+            <% if @language == 'fr' %>
+              <p><%= @project.description_fr %></p>
+            <% else %>
+              <p><%= @project.description %></p>
+            <% end %>
           </div>
         </div>
         <div class="row">

@@ -3,11 +3,12 @@ class AjaxController < ApplicationController
 
   def modal_students
     # Getting the locale from ajax
-    I18n.locale = params[:_locale]
+    @language = params[:_locale]
     @project = Project.find(params[:project])
   end
 
   def batch_search
+    @language = params[:_locale]
     @results = PgSearch.multisearch(params[:_searchLetter])
   end
 
