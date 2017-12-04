@@ -8,11 +8,25 @@ $(document).on('turbolinks:load', function() {
         $(this).data('timer', setTimeout(search, 500));
   });
 
+  //If the backspace is clicked then hide the results
+  $('#searchString').keyup(function(e) {
+    if(e.keyCode == 8){
+      $('#results').hide();
+    }
+  });
+
+  //If the escape key is clicked, then close the results
+  $('#searchString').keyup(function(e) {
+    if(e.keyCode == 27){
+      $('#results').hide();
+    }
+  });
   //Clicking out of the search bar
   $('.batches-container').on('click', function(){
     $('#results').hide();
   });
 
+  //Doesn't disappear if you click on the search bar or the results
   $('#results, .form-control').on('click', function(e) { e.stopPropagation() });
 
 });
@@ -27,6 +41,8 @@ function search(force) {
       data: {'_searchLetter': existingString}
     }).done(function(response) {
         $('#results').html(response);
-        $('#results').show();
+        if(response){
+          $('#results').show();
+        }
     });
 }
