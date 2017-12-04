@@ -7,4 +7,8 @@ class AjaxController < ApplicationController
     @project = Project.find(params[:project])
   end
 
+  def batch_search
+    @results = PgSearch.multisearch(params[:_searchLetter])
+  end
+
 end

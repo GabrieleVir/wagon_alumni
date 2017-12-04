@@ -1,5 +1,6 @@
 .batches-container {
   position: relative;
+  overflow-x:hidden;
 }
 
 .alert {
@@ -7,11 +8,11 @@
 }
 
 .batch-switch-languages {
-  position: absolute;
-  z-index: 1;
-  top: 20px;
-  left: 20px;
-  color:white;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    color: white;
 }
 
 .batch-item-container {
@@ -164,4 +165,85 @@
   margin-left: 10px;
   position: relative;
   bottom: 4px;
+}
+
+.stylish-input-group .input-group-addon{
+    background: transparent;
+    border: none;
+    color: red;
+    border-bottom: 1px solid white;
+}
+
+.stylish-input-group .form-control{
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+    color:white;
+}
+
+.input-group{
+    position: absolute;
+    display: table;
+    border-collapse: separate;
+    z-index: 2;
+    margin-top: 7%;
+    margin-left: 5%;
+    width: 70%;
+    @media (max-width: 800px) {
+     margin-top: 8%;
+    }
+}
+
+.form-control{
+  color:white;
+  &:focus{
+    outline: none;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+
+}
+
+#results {
+  position: absolute;
+  display: none;
+  border-collapse: separate;
+  z-index: 13;
+  margin-top: 10%;
+  margin-left: 5%;
+  width: 70%;
+  background-color:white;
+  border:2px solid black;
+  border-top:none;
+  @media (max-width: 1600px) {
+    margin-top: 12%;
+  }
+
+  @media (max-width: 880px) {
+    margin-top: 15%;
+  }
+  @media (max-width: 800px) {
+    margin-top: 13%;
+  }
+}
+
+.logo {
+  position: absolute;
+  z-index: 2;
+  width: 55px;
+  margin: 3px;
+}
+
+.img-searchbar{
+  width:55px;
 }
