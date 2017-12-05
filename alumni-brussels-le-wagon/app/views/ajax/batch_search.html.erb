@@ -1,0 +1,87 @@
+<% @results.each do |result| %>
+  <% if result.searchable_type == 'Student' %>
+    <% student = result.searchable %>
+      <% unless student.fake %>
+        <table class="table table-hover section_under-searchbar">
+          <thead>
+            <tr>
+              <th></th>
+              <th>First name</th>
+              <th>Project</th>
+              <th>Batch</th>
+              <th>Github</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= image_tag "batches/batch-#{student.batch.name}/#{student.picture}", class: "img-searchbar" %></td>
+              <td>
+                <p><%= student.first_name %> </p>
+              </td>
+              <td>
+                <p><a href="<%= student.project.project_url %>" target="_blank"> <%= student.project.name %></a></p>
+              </td>
+              <td>
+                <p><%= link_to "Batch \##{student.batch.name}", "#{I18n.locale}/batches/#{student.batch.name}/" %></p>
+              </td>
+              <td>
+                <a class='modal-student-github' target='_blank' href="<%= student.github_url %>" data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
+                  <i class='mdi-github-circle mdi'></i></a>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+  <% elsif result.searchable_type == 'Project' %>
+    <% project = result.searchable %>
+    <div class="section_under-searchbar">
+              <table class="table table-hover section_under-searchbar">
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Description</th>
+              <th>Link to project</th>
+              <th>Link to the students</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <%= project.name %></td>
+              <td>
+                <% if @language == 'fr' %>
+                  <p><%= project.description_fr %> </p>
+                <% else %>
+                  <p><%= project.description %></p>
+                <% end %>
+              </td>
+              <td>
+                <p>
+                  <%= link_to project.project_url, class: 'link-in-card', target: '_blank' do %>
+                  <i class='mdi-link-variant mdi'></i>
+                  <% end %>
+                </p>
+              </td>
+              <td>
+                <%= link_to "/#{@language}/batches/#{project.students.first.batch.name}/?student=#{project.students.first.id - 1}", class: 'link-in-card', target: '_blank' do %>
+                  <i class='mdi-link-variant mdi'></i>
+                  <% end %>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  <% elsif result.searchable_type == 'Batch' %>
+    <% batch = result.searchable %>
+    <div class="section_under-searchbar">
+      <h2 class="text-center">
+        <%= image_tag "le-wagon-logo-min.jpg", class: "img-searchbar" %></td>
+
+        <%= link_to "Batch \##{batch.name}", "#{I18n.locale}/batches/#{batch.name}/" %>
+      </h2>
+      <h3 class="text-center">Nombre d'étudiants: <%= batch.students.where("fake": false).count %></h3>
+    </div>
+  <% end %>
+<% end %>

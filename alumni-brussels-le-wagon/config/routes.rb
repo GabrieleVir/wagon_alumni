@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
     get 'batches/ajax/:project' => 'ajax#modal_students'
 
+    get 'batches/batch_search/:searchLetter' => 'ajax#batch_search'
+
   end
 
 
