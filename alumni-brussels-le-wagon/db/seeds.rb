@@ -60,3 +60,26 @@ Student_list = [
 Student_list.each do |first_name, last_name, github, portfolio, project, picture, fake|
   Student.create(first_name: first_name, last_name: last_name, github_url: github, portfolio_url: portfolio, batch_id: 1, project_id: project, picture: picture, fake: fake)
 end
+
+Meta_list = [
+  ['batch', nil, 1],
+  ['fun', 1, 2],
+  ['books', 2, 3],
+  ['law', 3, 4],
+  ['photo', 4, 5],
+  ['restaurants', 5, 6],
+  ['organisation', 6, 7],
+  ['ads', 7, 8]
+]
+
+Meta_list.each do |name, project_id, meta_tag_id|
+  MetaTag.create(name: name)
+  ProjectsMetaTag.create(project_id: project_id, meta_tag_id: meta_tag_id)
+end
+
+# All batches have this meta tag
+Batch.all.each do |batch|
+  BatchesMetaTag.create(batch_id: batch.id, meta_tag_id: 1)
+end
+
+
