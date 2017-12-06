@@ -32,7 +32,7 @@ end
 # Yass
 Student_list = [
   ['Alexandre', nil, 'https://github.com/VKAlex95', 'http://aafke89.github.io/portfolio/', 5, 'alexandre.png', false],
-  ['Carmen', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', 5, 'carmen.png', false],
+  ['Alex', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', 5, 'carmen.png', false],
   ['Diogo', nil, 'https://github.com/eltigredc', 'http://dimmaaah.github.io/portfolio/', 5, 'diogo.png', false],
   ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', nil, 'theo.png', false],
   ['Sasha', nil, 'https://github.com/sashamanekke', 'http://elyas03.github.io/portfolio/', 1, 'sasha.png', false],
