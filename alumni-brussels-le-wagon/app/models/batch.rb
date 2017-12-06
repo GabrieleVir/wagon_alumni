@@ -4,5 +4,6 @@ class Batch < ApplicationRecord
 
   has_many :projects, :through => :students
   has_many :students, dependent: :destroy
+  has_and_belongs_to_many :meta_tags
 
 end

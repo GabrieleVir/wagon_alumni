@@ -1,0 +1,3 @@
+class BatchesMetaTag < ApplicationRecord
+
+end
