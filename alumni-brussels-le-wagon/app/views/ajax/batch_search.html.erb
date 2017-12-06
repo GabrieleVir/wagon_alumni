@@ -1,147 +1,50 @@
 <% @results.each do |result| %>
+
+  <%# If the user search for a student %>
   <% if result.searchable_type == 'Student' %>
     <% student = result.searchable %>
     <% unless student.fake %>
-      <table class="table table-hover section_under-searchbar">
-        <thead>
-          <tr>
-            <th></th>
-            <th>First name</th>
-            <th>Project</th>
-            <th>Batch</th>
-            <th>Github</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <%= image_tag "batches/batch-#{student.batch.name}/#{student.picture}", class: "img-searchbar" %></td>
-            <td>
-              <p><%= student.first_name %> </p>
-            </td>
-            <td>
-              <p><a href="<%= student.project.project_url %>" target="_blank"> <%= student.project.name %></a></p>
-            </td>
-            <td>
-              <p><%= link_to "Batch \##{student.batch.name}", "#{I18n.locale}/batches/#{student.batch.name}/" %></p>
-            </td>
-            <td>
-              <a class='modal-student-github' target='_blank' href="<%= student.github_url %>" data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
-                <i class='mdi-github-circle mdi'></i></a>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+      <%= render partial: 'student_search', locals: { student: student } %>
+
     <% end %>
+
+  <%# If the user search for a project name %>
   <% elsif result.searchable_type == 'Project' %>
     <% project = result.searchable %>
-    <div class="section_under-searchbar">
-      <table class="table table-hover section_under-searchbar">
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Description</th>
-            <th>Link to project</th>
-            <th>Link to the students</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <%= project.name %></td>
-            <td>
-              <% if @language == 'fr' %>
-                <p><%= project.description_fr %> </p>
-              <% else %>
-                <p><%= project.description %></p>
-              <% end %>
-            </td>
-            <td>
-              <p>
-                <%= link_to project.project_url, class: 'link-in-card', target: '_blank' do %>
-                <i class='mdi-link-variant mdi'></i>
-                <% end %>
-              </p>
-            </td>
-            <td>
-              <%= link_to "/#{@language}/batches/#{project.students.first.batch.name}/?student=#{project.students.first.id - 1}", class: 'link-in-card' do %>
-                <i class='mdi-link-variant mdi'></i>
-                <% end %>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+      <%= render partial: 'project_search', locals: { project: project } %>
+
+  <%# If the user search directly a batch number %>
   <% elsif result.searchable_type == 'Batch' %>
     <% batch = result.searchable %>
-    <div class="section_under-searchbar">
-      <h2 class="text-center">
-        <%= image_tag "le-wagon-logo-min.jpg", class: "img-searchbar" %></td>
 
-        <%= link_to "Batch \##{batch.name}", "/#{I18n.locale}/batches/#{batch.name}/" %>
-      </h2>
-      <h3 class="text-center">Nombre d'étudiants: <%= batch.students.where("fake": false).count %></h3>
-    </div>
+      <%= render partial: 'batch_search', locals: { batch: batch } %>
+
+  <%# If the user search a tag of a batch %>
   <% elsif result.searchable_type == 'MetaTag' %>
     <% metaTag = result.searchable %>
     <% if metaTag.batch_ids %>
+      <%# We have to do a loop to search all the differents %>
       <% metaTag.batch_ids.each do |batch_id| %>
         <% meta_batches = Batch.where(id: batch_id) %>
-        <% meta_batches.each do |meta_batch| %>
-          <div class="section_under-searchbar">
-            <h2 class="text-center">
-              <%= image_tag "le-wagon-logo-min.jpg", class: "img-searchbar" %></td>
+        <% meta_batches.each do |batch| %>
 
-              <%= link_to "Batch \##{meta_batch.name}", "/#{I18n.locale}/batches/#{meta_batch.name}/" %>
-            </h2>
-            <h3 class="text-center">Nombre d'étudiants: <%= meta_batch.students.where("fake": false).count %></h3>
-          </div>
+          <%= render partial: 'batch_search', locals: { batch: batch } %>
+
         <% end %>
       <% end %>
+
+    <%# If the user search a tag of a project %>
     <% elsif metaTag.project_ids %>
       <% metaTag.project_ids.each do |project_id| %>
         <% meta_projects = Project.where(id: project_id) %>
-        <% meta_projects.each do |meta_project| %>
-          <div class="section_under-searchbar">
-            <table class="table table-hover section_under-searchbar">
-              <thead>
-                <tr>
-                  <th>Project</th>
-                  <th>Description</th>
-                  <th>Link to project</th>
-                  <th>Link to the students</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <%= project.name %></td>
-                  <td>
-                    <% if @language == 'fr' %>
-                      <p><%= project.description_fr %> </p>
-                    <% else %>
-                      <p><%= project.description %></p>
-                    <% end %>
-                  </td>
-                  <td>
-                    <p>
-                      <%= link_to project.project_url, class: 'link-in-card', target: '_blank' do %>
-                      <i class='mdi-link-variant mdi'></i>
-                      <% end %>
-                    </p>
-                  </td>
-                  <td>
-                    <%= link_to "/#{@language}/batches/#{project.students.first.batch.name}/?student=#{project.students.first.id - 1}", class: 'link-in-card' do %>
-                      <i class='mdi-link-variant mdi'></i>
-                      <% end %>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <% meta_projects.each do |project| %>
+          <%= render partial: 'project_search', locals: { project: project } %>
         <% end %>
       <% end %>
     <% end %>
+
   <% end %>
+
 <% end %>

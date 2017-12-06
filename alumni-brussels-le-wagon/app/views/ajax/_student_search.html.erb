@@ -1,0 +1,31 @@
+<table class="table table-hover section_under-searchbar">
+  <thead>
+    <tr>
+      <th></th>
+      <th>First name</th>
+      <th>Project</th>
+      <th>Batch</th>
+      <th>Github</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag "batches/batch-#{student.batch.name}/#{student.picture}", class: "img-searchbar" %></td>
+      <td>
+        <p><%= student.first_name %> </p>
+      </td>
+      <td>
+        <p><a href="<%= student.project.project_url %>" target="_blank"> <%= student.project.name %></a></p>
+      </td>
+      <td>
+        <p><%= link_to "Batch \##{student.batch.name}", "#{I18n.locale}/batches/#{student.batch.name}/" %></p>
+      </td>
+      <td>
+        <a class='modal-student-github' target='_blank' href="<%= student.github_url %>" data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
+          <i class='mdi-github-circle mdi'></i></a>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
