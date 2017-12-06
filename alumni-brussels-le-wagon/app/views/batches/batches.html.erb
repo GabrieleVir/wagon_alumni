@@ -42,7 +42,7 @@
                 <p><%= l(batch.date_start, format: :month) %> - <%= l(batch.date_end, format: :month_year) %></p>
               </div>
               <div class='batch-item-content-btn'>
-                <%= link_to t('batches.link_to_students'), "#{I18n.locale}/batches/#{batch.name}/" %>
+                <%= link_to t('batches.link_to_students'), "/#{I18n.locale}/batches/#{batch.name}/" %>
                 <% if project_exists?(batch) %>
                   <%= link_to t('batches.link_to_projects'), "https://www.lewagon.com/#{I18n.locale}/demoday/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
                 <% end %>
