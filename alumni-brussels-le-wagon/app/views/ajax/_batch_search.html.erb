@@ -1,0 +1,8 @@
+<div class="section_under-searchbar">
+  <h2 class="text-center">
+    <%= image_tag "le-wagon-logo-min.jpg", class: "img-searchbar" %></td>
+
+    <%= link_to "Batch \##{batch.name}", "/#{I18n.locale}/batches/#{batch.name}/" %>
+  </h2>
+  <h3 class="text-center">Nombre d'étudiants: <%= batch.students.where("fake": false).count %></h3>
+</div>

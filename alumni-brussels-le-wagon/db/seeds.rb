@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Batch_list = [
-  [96, Date.parse("2016-04-01"), Date.parse("2016-06-01"), nil, nil, "group-photos/batch-96.jpg"]
+  [96, Date.parse("2016-04-01"), Date.parse("2016-06-01"), 50, nil, "group-photos/batch-96.jpg"]
 ]
 
 Batch_list.each do |name, date_start, date_end, previous_batch, next_batch, picture_url|
@@ -34,7 +34,7 @@ Student_list = [
   ['Alexandre', nil, 'https://github.com/VKAlex95', 'http://aafke89.github.io/portfolio/', 5, 'alexandre.png', false],
   ['Alex', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', 5, 'carmen.png', false],
   ['Diogo', nil, 'https://github.com/eltigredc', 'http://dimmaaah.github.io/portfolio/', 5, 'diogo.png', false],
-  ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', nil, 'theo.png', false],
+  ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', 4, 'theo.png', false],
   ['Sasha', nil, 'https://github.com/sashamanekke', 'http://elyas03.github.io/portfolio/', 1, 'sasha.png', false],
   ['Chris', nil, 'https://github.com/piks3l', 'http://milou121.github.io/portfolio/', 3, 'chris.png', false],
   ['Hasna', nil, 'https://github.com/quiko', 'http://flehodey.github.io/portfolio/', 6, 'hasna.png', false],

@@ -1,0 +1,37 @@
+<div class="section_under-searchbar">
+  <table class="table table-hover section_under-searchbar">
+    <thead>
+      <tr>
+        <th>Project</th>
+        <th>Description</th>
+        <th>Link to project</th>
+        <th>Link to the students</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= project.name %></td>
+        <td>
+          <% if @language == 'fr' %>
+            <p><%= project.description_fr %> </p>
+          <% else %>
+            <p><%= project.description %></p>
+          <% end %>
+        </td>
+        <td>
+          <p>
+            <%= link_to project.project_url, class: 'link-in-card', target: '_blank' do %>
+            <i class='mdi-link-variant mdi'></i>
+            <% end %>
+          </p>
+        </td>
+        <td>
+          <%= link_to "/#{@language}/batches/#{project.students.first.batch.name}/?student=#{project.students.first.id - 1}", class: 'link-in-card' do %>
+            <i class='mdi-link-variant mdi'></i>
+            <% end %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
