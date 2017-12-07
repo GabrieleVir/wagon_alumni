@@ -12,6 +12,13 @@
     z-index: 1;
     top: 7%;
     right: 2%;
+    @media (max-width: 1024px){
+      top:4%
+    }
+    @media (max-width: 640px) {
+      top: 6%;
+      right: 6%;
+    }
     color: white;
 }
 
@@ -91,6 +98,9 @@
     font-weight: bold;
     display: block;
     align-items: center;
+    @media (max-width: 640px) {
+      margin-top:200px;
+    }
   }
 
   &-tagline {
@@ -100,6 +110,9 @@
     margin: 9px 0;
     letter-spacing: -1px;
     font-size: 30px;
+    @media (max-width: 640px) {
+      display:none;
+    }
 
     span {
       color: white;
@@ -156,6 +169,9 @@
   display: inline-block;
   position: relative;
   margin-bottom: 13px;
+  @media (max-width: 640px) {
+    display:none;
+  }
 }
 
 .end-sep {
@@ -165,6 +181,9 @@
   margin-left: 10px;
   position: relative;
   bottom: 4px;
+  @media (max-width: 640px) {
+    display:none;
+  }
 }
 
 .stylish-input-group .input-group-addon{
@@ -195,7 +214,12 @@
     margin-left: 5%;
     width: 70%;
     @media (max-width: 800px) {
-     margin-top: 8%;
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+    @media (max-width: 640px) {
+      margin-top: 100px;
+      margin-left: 10%;
     }
 }
 
@@ -240,6 +264,9 @@ button:focus {
   position: absolute;
   z-index: 2;
   width: 255px;
+  @media (max-width: 640px) {
+    width: 200px;
+  }
 }
 
 .img-searchbar{
