@@ -15,9 +15,6 @@
     z-index: 1;
     top: 42px;
     right: 2%;
-    @media (max-width: 1024px){
-      top:4%
-    }
     @media (max-width: 640px) {
       top: 37px;
       right: 6%;

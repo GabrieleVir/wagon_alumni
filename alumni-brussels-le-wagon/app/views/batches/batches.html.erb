@@ -13,14 +13,16 @@
     <div id="results">
     </div>
   </div>
-  <div class="wagon-logo">
-    <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
-  </div>
-  <div class="batch-switch-languages">
-    <%= link_to 'FR', root_path('fr') %>
-    |
-    <%= link_to 'EN', root_path('en') %>
-  </div>
+  <header>
+    <div class="wagon-logo">
+      <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
+    </div>
+    <div class="batch-switch-languages">
+      <%= link_to 'FR', root_path('fr') %>
+      |
+      <%= link_to 'EN', root_path('en') %>
+    </div>
+  </header>
   <% @batches.each_with_index do |batch, index| %>
     <div class='batch-item-container' id='batch-<%= batch.name %>'>
       <div class='batch-item'>
