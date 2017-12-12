@@ -1,6 +1,4 @@
-<div class="loader">
-  <div class="loading-img"></div>
-</div>
+<!-- <div class="loader"></div> -->
 <%= render partial: 'layouts/header', locals: { title: @title, subtitle: @subtitle } %>
 <%= link_to root_path(I18n.locale), id: 'cross' do %>
   <i class='mdi mdi-close'></i>
@@ -8,10 +6,10 @@
 <section class="students">
 <ul class="container students list-unstyled">
   <% @students.each_with_index do |student, id| %>
-    <li <%= student_attributes(id, student, student.batch_id) %> class="students-list-item per-row-<%= students_per_row(@students.size) %>">
+    <li <%= student_attributes(id, student, student.batch_id) %> data-per-row="<%= @per_row %>" class="students-list-item hovered per-row-<%= @per_row %>">
       <figure class="student-card">
-        <div class="card-front card-front-0">
-          <%= image_tag "batches/batch-#{@batch.name}/#{student.picture}", class: "img-responsive" %>
+        <div class="card-front card-front-0" data-src="<%= asset_path "batches/batch-#{@batch.name}/#{student.picture}" %>">
+          <%# image_tag "batches/batch-#{@batch.name}/#{student.picture}", class: "img-responsive" %>
         </div>
         <div class="card-back card-back-0">
           <div class="card-wrapper">
@@ -41,3 +39,7 @@
 </ul>
 </section>
 <%= render 'layouts/modal_student' %>
+<% content_for(:preload_animation) do %>
+  <% javascript_include_tag 'batch_students' %>
+<% end %>
+
