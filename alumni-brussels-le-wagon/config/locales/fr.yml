@@ -19,3 +19,8 @@ fr:
     link_portfolio_tooltip: "Ouvrir le projet sur le site du Le Wagon"
     link_github_tooltip: "Ouvrir son profil github sur un nouvel onglet"
   city: "Bruxelles"
+  batch_search:
+    student_first_name_table: "Prénom"
+    student_project_table: "Projet"
+    student_batch_table: "Batch"
+    student_github_table: "Github"

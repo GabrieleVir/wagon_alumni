@@ -11,7 +11,9 @@
     <tbody>
       <tr>
         <td>
-          <%= project.name %></td>
+          <a href="<%= "#{project.project_url}" %>">
+            <%= project.name %></td>
+          </a>
         <td>
           <% if @language == 'fr' %>
             <p><%= project.description_fr %> </p>
