@@ -2,16 +2,18 @@
   <table class="table table-hover section_under-searchbar">
     <thead>
       <tr>
-        <th>Project</th>
-        <th>Description</th>
-        <th>Link to project</th>
-        <th>Link to the students</th>
+        <th><%= t("batch_search.project_title_table") %></th>
+        <th><%= t("batch_search.project_description_table") %></th>
+        <th><%= t("batch_search.project_link_to_project_table") %></th>
+        <th><%= t("batch_search.project_link_to_students_table") %></th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td>
-          <%= project.name %></td>
+          <a href="<%= "#{project.project_url}" %>">
+            <%= project.name %></td>
+          </a>
         <td>
           <% if @language == 'fr' %>
             <p><%= project.description_fr %> </p>

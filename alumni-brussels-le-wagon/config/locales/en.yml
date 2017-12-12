@@ -38,3 +38,17 @@ en:
     link_portfolio_tooltip: "Open the project on Le Wagon website"
     link_github_tooltip: "Open his/her github profile on a new tab"
   city: "Brussels"
+  batch_search:
+    # For the student search
+    student_first_name_table: "First name"
+    student_project_table: "Project"
+    student_batch_table: "Batch"
+    student_github_table: "Github"
+    # For the project search
+    project_title_table: "Project"
+    project_description_table: "Description"
+    project_link_to_project_table: "Link to project"
+    project_link_to_students_table: "Link to the students"
+    # For the batch search
+    batch_number_of_students: "Number of students:"
+

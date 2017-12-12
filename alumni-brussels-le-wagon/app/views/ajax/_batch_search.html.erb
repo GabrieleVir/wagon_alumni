@@ -4,5 +4,5 @@
 
     <%= link_to "Batch \##{batch.name}", "/#{I18n.locale}/batches/#{batch.name}/" %>
   </h2>
-  <h3 class="text-center">Nombre d'étudiants: <%= batch.students.where("fake": false).count %></h3>
+  <h3 class="text-center"><%= t('batch_search.batch_number_of_students') %> <%= batch.students.where("fake": false).count %></h3>
 </div>
