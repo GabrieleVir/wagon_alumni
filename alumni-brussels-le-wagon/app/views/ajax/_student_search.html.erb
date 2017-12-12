@@ -11,9 +11,9 @@
   <tbody>
     <tr>
       <td>
-        <% link_to "Batch \##{student.batch.name}", "#{I18n.locale}/batches/#{student.batch.name}/" do %>
+        <a href="<%= "/#{@language}/batches/#{student.batch.name}/?student=#{student.id - 1}" %>">
           <%= image_tag "batches/batch-#{student.batch.name}/#{student.picture}", class: "img-searchbar" %>
-        <% end %>
+        </a>
       </td>
       <td>
         <p><%= student.first_name %> </p>
@@ -26,7 +26,7 @@
       </td>
       <td>
         <a class='github-searchbar' target='_blank' href="<%= student.github_url %>" data-toggle="tooltip" data-placement="bottom" title='<%= t("modal.link_github_tooltip") %>'>
-          <i class='mdi-github-circle mdi'></i></a>
+          <i class='mdi-github-circle mdi'></i>
         </a>
       </td>
     </tr>
