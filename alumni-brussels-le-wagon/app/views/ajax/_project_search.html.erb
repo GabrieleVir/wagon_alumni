@@ -22,13 +22,15 @@
         <td>
           <p>
             <%= link_to project.project_url, class: 'link-in-card', target: '_blank' do %>
-            <i class='mdi-link-variant mdi'></i>
+            <i class='mdi-link-variant mdi for_desktop'></i>
+            <span class="for_mobile">Link to project</span>
             <% end %>
           </p>
         </td>
         <td>
           <%= link_to "/#{@language}/batches/#{project.students.first.batch.name}/?student=#{project.students.first.id - 1}", class: 'link-in-card' do %>
-            <i class='mdi-link-variant mdi'></i>
+            <i class='mdi-link-variant mdi for_desktop'></i>
+            <span class="for_mobile">Link to students</span>
             <% end %>
         </td>
       </tr>

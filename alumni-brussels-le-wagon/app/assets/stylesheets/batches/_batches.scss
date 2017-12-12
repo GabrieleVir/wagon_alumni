@@ -77,7 +77,7 @@
   max-width: 800px;
   width: 100%;
   display: flex;
-  padding-right: 10vw;
+  padding-top: 6vw;
 
   align-items: flex-end;
   margin: auto;
@@ -92,7 +92,7 @@
 
   &-title {
     font-size: 55px;
-    letter-spacing: -2px;
+    letter-spacing: 2px;
     color: white;
     font-weight: bold;
     display: block;
@@ -106,7 +106,7 @@
     font-weight: 100;
     color: rgba(white, .6);
     margin: 9px 0;
-    letter-spacing: -1px;
+    letter-spacing: 2px;
     font-size: 24px;
     @media (max-width: 640px) {
       display:none;
@@ -215,13 +215,8 @@
     border-collapse: separate;
     z-index: 16;
     width: 100%;
-    @media (max-width: 800px) {
-      margin-top: 15%;
-      margin-left: 10%;
-    }
     @media (max-width: 640px) {
       margin-top: 100px;
-      margin-left: 10%;
     }
 }
 
@@ -242,9 +237,22 @@ button:focus {
 
 .search-container{
   position: absolute;
-  width: 30%;
+  width: 40%;
   left: 32vw;
   top: 42px;
+
+  @media (max-width: 800px) {
+    left: 45vw;
+    top: 35px;
+  }
+
+  @media (max-width: 640px) {
+    position: absolute;
+    width: 80%;
+    left: 10vw;
+    top: 42px;
+  }
+
 }
 
 #results {
@@ -256,6 +264,15 @@ button:focus {
   background-color:white;
   border:2px solid black;
   border-top:none;
+  @media (max-width: 1000px) {
+    zoom: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    text-align:center;
+    zoom:1;
+  }
+
 }
 
 .logo {
@@ -274,3 +291,89 @@ button:focus {
 .table {
   margin-bottom:8px;
 }
+
+//Searchbar for mobile
+
+.for_mobile{
+  display:none;
+}
+
+@media (max-width: 900px)
+{
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+    background-color: white;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr { border: 1px solid #ccc; }
+
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  .for_mobile {
+    display:block;
+  }
+
+  .for_desktop{
+    display:none;
+  }
+}
+.github-searchbar{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #EE5F5B;
+  border: 2px solid #EE5F5B;
+  cursor: pointer;
+  /* margin-top: 23px; */
+  font-size: 18px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.07);
+  opacity: 0.4;
+  @media (max-width: 1000px) {
+    width: 20px;
+    height: 20px;
+  }
+
+  @media (max-width: 900px) {
+    display:inline-block;
+    .mdi{
+      display: block;
+      margin-left: -1px;
+    }
+  }
+  &:hover {
+    color: $red;
+    opacity: 1;
+    text-decoration:none;
+  }
+}
+
+//Searchbar css for mobile ends
