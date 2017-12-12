@@ -16,23 +16,24 @@ $light-gray: #F4F4F4;
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 @import url("https://cdn.materialdesignicons.com/1.5.54/css/materialdesignicons.min.css");
 
-// Define fonts for body and headers
-$body-font: "Lato", "Helvetica", "sans-serif";
-$headers-font: "Avenir", "Helvetica", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+ @font-face {
+   font-family: "Avenir Light";
+   src: font-url('AvenirLight.eot');
+   src: font-url('AvenirLight.eot?#iefix') format('embedded-opentype'),
+        font-url('AvenirLight.woff') format('woff'),
+        font-url('AvenirLight.ttf') format('truetype')
+ }
+ $font-avenir: "Avenir Light";
 /* -------------------------------------
  * Fonts
  * ------------------------------------- */
 // Google fonts
+
+// Define fonts for body and headers
+$body-font: $font-avenir, "Helvetica", "sans-serif";
+$headers-font: $font-avenir, "Helvetica", "sans-serif";
 
 // Font-size and line-height
 $base-size: 16px;

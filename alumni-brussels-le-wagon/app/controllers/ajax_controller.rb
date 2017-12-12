@@ -9,6 +9,9 @@ class AjaxController < ApplicationController
 
   def batch_search
     @language = params[:_locale]
+    if @language == ''
+      @language = 'en'
+    end
     @results = PgSearch.multisearch(params[:_searchLetter])
   end
 

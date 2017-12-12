@@ -1,7 +1,7 @@
 fr:
   hello: "Hello world"
   batches:
-    description_batch_html: "<span>%{total_students} étudiants</span> apprennent <span> à coder & construire</span> des applications à Bruxelles pendant 12 semaines."
+    description_batch_html: "<span>%{total_students} étudiants</span> apprennent <span> à coder & construire</span> des applications <br/>à Bruxelles pendant 12 semaines."
     link_to_students: "Nos étudiants"
     link_to_projects: "Leurs projets"
     previous_batch: "Batch précédent"

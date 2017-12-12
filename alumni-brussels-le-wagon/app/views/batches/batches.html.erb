@@ -1,32 +1,28 @@
 <div class='batches-container'>
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <div id="imaginary_container">
-                <div class="input-group stylish-input-group input-append">
-                    <input type="search" class="form-control"  placeholder="Search" id="searchString" >
-                    <span class="input-group-addon">
-                        <button type="submit">
-                            <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
-            </div>
-        </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div id="results">
+  <div class="search-container">
+    <div id="imaginary_container">
+      <div class="input-group stylish-input-group input-append">
+          <input type="search" class="form-control"  placeholder="Search" id="searchString" >
+          <span class="input-group-addon">
+              <button type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+              </button>
+          </span>
       </div>
     </div>
+    <div id="results">
+    </div>
   </div>
-  <div class="wagon-logo">
-    <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
-  </div>
-  <div class="batch-switch-languages">
-    <%= link_to 'FR', root_path('fr') %>
-    |
-    <%= link_to 'EN', root_path('en') %>
-  </div>
+  <header>
+    <div class="wagon-logo">
+      <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
+    </div>
+    <div class="batch-switch-languages">
+      <%= link_to 'FR', root_path('fr') %>
+      |
+      <%= link_to 'EN', root_path('en') %>
+    </div>
+  </header>
   <% @batches.each_with_index do |batch, index| %>
     <div class='batch-item-container' id='batch-<%= batch.name %>'>
       <div class='batch-item'>
