@@ -15,3 +15,4 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= stub batch_students.js

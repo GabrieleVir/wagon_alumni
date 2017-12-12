@@ -1,14 +1,8 @@
-$(document).on('turbolinks:load', function() {
-
-  // If there is a loader, hide it when the page has loaded
-  if($('.loader')){
-    $('.loader').fadeOut();
-  }
+$(document).on('ready page:load', function() {
 
   // If there is student in the URL, show the modal of the student
   if(parseParam('student')) {
     populateModalWithId(parseParam('student'));
-
   }
 
   // Clicking on a card

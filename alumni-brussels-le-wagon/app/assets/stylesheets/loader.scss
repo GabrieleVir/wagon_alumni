@@ -1,7 +1,7 @@
-@keyframes loading {
-  0% { background-position: -75px; }
-  100% { background-position: 100vw; }
-}
+// @keyframes loading {
+//   0% { background-position: -75px; }
+//   100% { background-position: 100vw; }
+// }
 
 .loader {
   position: fixed;
@@ -10,16 +10,7 @@
   right: 0;
   left: 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   z-index: 999;
 
-  background: #fff image-url("le-wagon-logo-min.jpg") no-repeat -100px 0;
-  background-size: 100px 100px;
-  animation-name: loading;
-  animation-duration: 4.5s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+  background: #fff image-url("preloader.gif") no-repeat center;
 }
