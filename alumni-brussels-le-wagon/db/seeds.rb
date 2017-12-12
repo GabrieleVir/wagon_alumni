@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Batch_list = [
-  [96, Date.parse("2016-04-01"), Date.parse("2016-06-01"), 95, nil, "group-photos/batch-96.jpg"],
-  [95, Date.parse("2016-04-01"), Date.parse("2016-06-01"), nil, 96, "group-photos/batch-96.jpg"]
+  [96, Date.parse("2017-09-10"), Date.parse("2017-10-24"), 95, nil, "group-photos/batch-96.jpg"],
+  [95, Date.parse("2017-10-01"), Date.parse("2017-11-01"), nil, 96, "group-photos/batch-96.jpg"]
 ]
 
 Batch_list.each do |name, date_start, date_end, previous_batch, next_batch, picture_url|
