@@ -20,7 +20,15 @@ fr:
     link_github_tooltip: "Ouvrir son profil github sur un nouvel onglet"
   city: "Bruxelles"
   batch_search:
+    # For the student search
     student_first_name_table: "Prénom"
     student_project_table: "Projet"
     student_batch_table: "Batch"
     student_github_table: "Github"
+    # For the project search
+    project_title_table: "Projet"
+    project_description_table: "Description"
+    project_link_to_project_table: "Lien vers le projet"
+    project_link_to_students_table: "Lien vers les étudiants"
+    # For the batch search
+    batch_number_of_students: "Nombre d'étudiants:"
