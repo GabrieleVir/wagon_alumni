@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Website to search the students of Le Wagon's Alumni">
+  <meta name="description" content="Website for searching throw all the alumni of Le Wagon">
+  <title>AlumniBrusselsLeWagon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body>
+  <% if flash[:notice] %>
+    <p class="alert alert-info"><%= notice %></p>
+  <% end %>
+  <% if flash[:alert] %>
+    <p class="alert alert-warning"><%= alert %></p>
+  <% end %>
+
+
+  <%= yield %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield(:preload_animation) %>
+</body>
+</html>

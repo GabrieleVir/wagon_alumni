@@ -1,0 +1,61 @@
+<div class='batches-container'>
+  <div class="search-container">
+    <div id="imaginary_container">
+      <div class="input-group stylish-input-group input-append">
+          <input type="search" class="form-control"  placeholder="Search" id="searchString" >
+          <span class="input-group-addon">
+              <button type="submit">
+                  <span class="glyphicon glyphicon-search"></span>
+              </button>
+          </span>
+      </div>
+    </div>
+    <div id="results">
+    </div>
+  </div>
+  <header>
+    <div class="wagon-logo">
+      <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
+    </div>
+    <div class="batch-switch-languages">
+      <%= link_to 'FR', root_path('fr') %>
+      |
+      <%= link_to 'EN', root_path('en') %>
+    </div>
+  </header>
+  <% @batches.each_with_index do |batch, index| %>
+    <div class='batch-item-container' id='batch-<%= batch.name %>'>
+      <div class='batch-item'>
+        <div class='batch-item-thumb' style="background-image: linear-gradient(to left, <%= batch_gradient_color(index) %>), url('<%= image_path(batch.picture) %>')">
+          <div class='batch-item-content'>
+            <div>
+              <div class='batch-item-content-title'>
+                Le <span class='middle-sep'></span> Wagon <span class='middle-sep'></span>
+                Batch <span class='middle-sep'></span> <%= batch.name %> <span class='end-sep'>¬</span>
+              </div>
+              <div class='batch-item-content-tagline'>
+                <%= t('batches.description_batch_html', total_students: batch.students.where("fake": false).count) %>
+                <p><%= l(batch.date_start, format: :month) %> - <%= l(batch.date_end, format: :month_year) %></p>
+              </div>
+              <div class='batch-item-content-btn'>
+                <%= link_to t('batches.link_to_students'), "/#{I18n.locale}/batches/#{batch.name}/", data: { turbolinks: false } %>
+                <%# because we don't have the video, this button is not recommended %>
+                <%# if project_exists?(batch) %>
+                  <%#= link_to t('batches.link_to_projects'), "https://www.lewagon.com/#{I18n.locale}/demoday/#{batch.name}/", target: '_blank', class: 'is-outlined' %>
+                <%# end %>
+                <% if batch.previous_batch %>
+                  <a href="#batch-<%= batch.previous_batch %>" class="is-outlined"><%= t('batches.previous_batch') %></a>
+                <% elsif batch.next_batch %>
+                  <a href="#batch-<%= batch.next_batch %>" class="is-outlined"><%= t('batches.next_batch') %></a>
+                <% end %>
+                <% if batch == @batches.first %>
+                  <%= link_to 'Le Wagon', "http://lewagon.com/#{I18n.locale}/brussels", target: '_blank', class: 'is-outlined' %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
