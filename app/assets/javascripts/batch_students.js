@@ -7,9 +7,8 @@ $(document).on('ready', function() {
   //   });
   // }
 
-  $.each($('.card-front'), function () {
-  }).promise().done(function () {
 
+  $('.img').on('load').promise().done(function () {
 
 
     var i = 0,
