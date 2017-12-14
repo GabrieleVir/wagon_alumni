@@ -8,10 +8,6 @@ $(document).on('ready', function() {
   // }
 
   $.each($('.card-front'), function () {
-    var img = new Image();
-    img.src = $(this).data("src");
-    $(img).addClass('img-responsive');
-    $(this).append(img);
   }).promise().done(function () {
 
 
