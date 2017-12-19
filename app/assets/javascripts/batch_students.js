@@ -7,9 +7,7 @@ $(document).on('ready', function() {
   //   });
   // }
 
-
   $('.img').on('load').promise().done(function () {
-
 
     var i = 0,
         numberOfCards = $('.students-list-item').length,
@@ -20,7 +18,7 @@ $(document).on('ready', function() {
     /**
      * calls the function flipCards() : line 43
      */
-    setTimeout(flipCards, 500);
+    setTimeout(flipCards, 100);
 
     /**
      * flips the cards in cascading (w timeout)

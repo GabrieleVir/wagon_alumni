@@ -1,6 +1,7 @@
 fr:
   hello: "Hello world"
   batches:
+    browser_title: "Le Wagon - Alumni"
     description_batch_html: "<span>%{total_students} étudiants</span> apprennent <span> à coder & construire</span> des applications <br/>à Bruxelles pendant 12 semaines."
     link_to_students: "Nos étudiants"
     link_to_projects: "Leurs projets"
@@ -32,3 +33,5 @@ fr:
     project_link_to_students_table: "Lien vers les étudiants"
     # For the batch search
     batch_number_of_students: "Nombre d'étudiants:"
+  batch_students:
+    browser_title_students: "Batch %{batch_number} - Les étudiants"

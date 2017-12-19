@@ -5,7 +5,7 @@
     <% student = result.searchable %>
     <% unless student.fake %>
 
-      <%= render partial: 'student_search', locals: { student: student } %>
+      <%= render partial: 'student_result', locals: { student: student } %>
 
     <% end %>
 
@@ -13,34 +13,35 @@
   <% elsif result.searchable_type == 'Project' %>
     <% project = result.searchable %>
 
-      <%= render partial: 'project_search', locals: { project: project } %>
+      <%= render partial: 'project_result', locals: { project: project } %>
 
   <%# If the user search directly a batch number %>
   <% elsif result.searchable_type == 'Batch' %>
     <% batch = result.searchable %>
 
-      <%= render partial: 'batch_search', locals: { batch: batch } %>
+      <%= render partial: 'batch_result', locals: { batch: batch } %>
 
   <%# If the user search a tag of a batch %>
   <% elsif result.searchable_type == 'MetaTag' %>
     <% metaTag = result.searchable %>
-    <% if metaTag.batch_ids %>
-      <%# We have to do a loop to search all the differents %>
+    <% if metaTag.batch_ids != [] %>
+      <%# We have to do a loop to search all the differents batch_results %>
       <% metaTag.batch_ids.each do |batch_id| %>
         <% meta_batches = Batch.where(id: batch_id) %>
         <% meta_batches.each do |batch| %>
 
-          <%= render partial: 'batch_search', locals: { batch: batch } %>
+          <%= render partial: 'batch_result', locals: { batch: batch } %>
 
         <% end %>
       <% end %>
+    <% end %>
 
     <%# If the user search a tag of a project %>
-    <% elsif metaTag.project_ids %>
+    <% if metaTag.project_ids != [] %>
       <% metaTag.project_ids.each do |project_id| %>
         <% meta_projects = Project.where(id: project_id) %>
         <% meta_projects.each do |project| %>
-          <%= render partial: 'project_search', locals: { project: project } %>
+          <%= render partial: 'project_result', locals: { project: project } %>
         <% end %>
       <% end %>
     <% end %>

@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+
 gem 'pg_search'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '=5.0.6'
@@ -9,6 +9,8 @@ gem 'pg', '~> 0.15'
 gem 'devise'
 # Use rails_admin for admin panel
 gem 'rails_admin'
+# Use carrierwave to import files
+gem 'carrierwave', '~> 1.0'
 # Use Bootstrap for rails
 gem 'bootstrap-sass', '~> 3.3.7'
 # Use SCSS for stylesheets

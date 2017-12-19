@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('ready page:load', function() {
 
   // If there is a loader, hide it when the page has loaded
   // if($('.loader')){
@@ -8,7 +8,10 @@ $(document).on('turbolinks:load', function() {
   // }
 
   $.each($('.card-front'), function () {
-
+    var img = new Image();
+    img.src = $(this).data("src");
+    $(img).addClass('img-responsive');
+    $(this).append(img);
   }).promise().done(function () {
 
 

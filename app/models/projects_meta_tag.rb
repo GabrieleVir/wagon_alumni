@@ -1,2 +1,0 @@
-class ProjectsMetaTag < ApplicationRecord
-end

@@ -48,6 +48,10 @@
   min-height: 100vh;
   align-items: center;
 
+  @media (max-width: 800px) {
+    padding: 15vh 20px;
+  }
+
   &:after {
     background: linear-gradient(to left, rgba(44, 62, 80, 1), rgba(44, 62, 80, 1));
     animation: fadeOut 1s ease 2s forwards;
@@ -75,7 +79,6 @@
 
 .batch-item-content {
   max-width: 800px;
-  width: 100%;
   display: flex;
   padding-top: 6vw;
 
@@ -98,7 +101,10 @@
     display: block;
     align-items: center;
     @media (max-width: 640px) {
-      margin-top:200px;
+      margin-top:100px;
+    }
+    @media (max-width: 800px) {
+      font-size: 40px;
     }
   }
 
@@ -112,6 +118,9 @@
       display:none;
     }
 
+    @media (max-width: 800px) {
+      font-size: 20px;
+    }
     span {
       color: white;
       text-shadow: 0px 0px 1px white;
@@ -238,7 +247,7 @@ button:focus {
 .search-container{
   position: absolute;
   width: 40%;
-  left: 32vw;
+  left: 30vw;
   top: 42px;
 
   @media (max-width: 800px) {

@@ -1,0 +1,3 @@
+class MetaTagsProject < ApplicationRecord
+
+end

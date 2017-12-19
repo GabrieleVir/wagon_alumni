@@ -8,10 +8,10 @@
   <% @students.each_with_index do |student, id| %>
     <li <%= student_attributes(id, student, student.batch_id) %> data-per-row="<%= @per_row %>" class="students-list-item hovered per-row-<%= @per_row %>">
       <figure class="student-card">
-        <div class="card-front card-front-0">
+        <div class="card-front card-front-2" data-src="<%# asset_path "batches/batch-#{@batch.name}/#{student.picture}" %>">
           <%= image_tag "batches/batch-#{@batch.name}/#{student.picture}", class: "img-responsive" %>
         </div>
-        <div class="card-back card-back-0">
+        <div class="card-back card-back-2">
           <div class="card-wrapper">
             <h2><%= student.first_name %></h2>
             <% unless student.fake %>

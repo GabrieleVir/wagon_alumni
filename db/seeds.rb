@@ -7,8 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Batch_list = [
-  [96, Date.parse("2017-09-10"), Date.parse("2017-10-24"), 95, nil, "group-photos/batch-96.jpg"],
-  [95, Date.parse("2017-10-01"), Date.parse("2017-11-01"), nil, 96, "group-photos/batch-96.jpg"]
+  [96, Date.parse("2017-09-10"), Date.parse("2017-10-24"), 95, nil, "group-photos/batch-96-min.jpg"],
+  [95, Date.parse("2017-10-01"), Date.parse("2017-11-01"), nil, 96, "group-photos/batch-96-min.jpg"]
 ]
 
 Batch_list.each do |name, date_start, date_end, previous_batch, next_batch, picture_url|
@@ -32,30 +32,30 @@ end
 # Eleve qui manque la photo:
 # Yass
 Student_list = [
-  ['Alexandre', nil, 'https://github.com/VKAlex95', 'http://aafke89.github.io/portfolio/', 5, 'alexandre.png', false],
-  ['Carmen', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', 5, 'carmen.png', false],
-  ['Diogo', nil, 'https://github.com/eltigredc', 'http://dimmaaah.github.io/portfolio/', 5, 'diogo.png', false],
-  ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', 4, 'theo.png', false],
-  ['Sasha', nil, 'https://github.com/sashamanekke', 'http://elyas03.github.io/portfolio/', 1, 'sasha.png', false],
-  ['Chris', nil, 'https://github.com/piks3l', 'http://milou121.github.io/portfolio/', 3, 'chris.png', false],
-  ['Hasna', nil, 'https://github.com/quiko', 'http://flehodey.github.io/portfolio/', 6, 'hasna.png', false],
-  ['Karel', nil, 'https://github.com/KarelVerhaeghe', 'http://geertkeularts.github.io/portfolio/', 2, 'karel.png', false],
-  ['Remi', nil, 'https://github.com/remidatroa', 'http://ginagoldberg.github.io/Portfolio/', 6, 'remi.png', false],
-  ['Reginald', nil, 'https://github.com/dewas90', 'http://www.jayvanderyoon.com/', 5, 'reginald.png', false],
-  ['<3', nil, nil, nil, nil, 'robot.jpg', true],
-  ['Ke Thien', nil, 'https://github.com/KeThien', 'http://jramon1.github.io/portfolio/', 3, 'ke_thien.png', false],
-  ['Luc', nil, 'https://github.com/ScrumMaster323', 'http://jurthetauren.github.io/portfolio/', 5, 'luc.png', false],
-  ['Yoshi', nil, 'https://github.com/Yoshivanroeyen', 'http://jurjenjm.github.io/portfolio/', 2, 'yoshi.png', false],
-  ['Thomas', nil, 'https://github.com/Sohett', 'http://www.lrjbrual.com/', 5, 'thomas.png', false],
-  ['Lynn', nil, 'https://github.com/LynnVanderhallen', 'http://merelsteenbrink.github.io/portofolio/', 2, 'lynn.png', false],
-  ['Maxim', nil, 'https://github.com/MaximPiessen', 'http://merelsteenbrink.github.io/portofolio/', 4, 'maxim.png', false],
-  ['Philippe', nil, 'https://github.com/filouzzz', 'http://micky0806.github.io/portfolio/', 6, 'philippe.png', false],
-  ['Pablo', nil, 'https://github.com/pablocm90', 'http://feiko1.github.io/portfolio/', 2, 'pablo.png', false],
-  ['Pierre', nil, 'https://github.com/pierrecollinet', 'https://nadyaa1.github.io/portfolio/', 4, 'pierre.png', false],
-  ['Madeline', nil, 'https://github.com/madoleary', 'https://nadyaa1.github.io/portfolio/', 3, 'madeline.png', false],
-  ['Jun Joseph', nil, 'https://github.com/jjpad', 'https://nadyaa1.github.io/portfolio/', 1, 'jun_joseph.png', false],
-  ['Louise', nil, 'https://github.com/louisepicot', 'https://nadyaa1.github.io/portfolio/', 1, 'louise.png', false],
-  ['Batch 96', nil, nil, 'https://www.lewagon.com/fr', nil, 'lewagon.png', true]
+  ['Alexandre', nil, 'https://github.com/VKAlex95', 'http://aafke89.github.io/portfolio/', 5, 'alexandre-min.png', false],
+  ['Carmen', nil, 'https://github.com/carmenlongo', 'http://auymaz.github.io/Portfolio/', 5, 'carmen-min.png', false],
+  ['Diogo', nil, 'https://github.com/eltigredc', 'http://dimmaaah.github.io/portfolio/', 5, 'diogo-min.png', false],
+  ['Theo', nil, 'https://github.com/theowillems', 'http://waltervanwoudenberg.github.io/portfolio/', 4, 'theo-min.png', false],
+  ['Sasha', nil, 'https://github.com/sashamanekke', 'http://elyas03.github.io/portfolio/', 1, 'sasha-min.png', false],
+  ['Chris', nil, 'https://github.com/piks3l', 'http://milou121.github.io/portfolio/', 3, 'chris-min.png', false],
+  ['Hasna', nil, 'https://github.com/quiko', 'http://flehodey.github.io/portfolio/', 6, 'hasna-min.png', false],
+  ['Karel', nil, 'https://github.com/KarelVerhaeghe', 'http://geertkeularts.github.io/portfolio/', 2, 'karel-min.png', false],
+  ['Remi', nil, 'https://github.com/remidatroa', 'http://ginagoldberg.github.io/Portfolio/', 6, 'remi-min.png', false],
+  ['Reginald', nil, 'https://github.com/dewas90', 'http://www.jayvanderyoon.com/', 5, 'reginald-min.png', false],
+  ['<3', nil, nil, nil, nil, 'robot-min.jpg', true],
+  ['Ke Thien', nil, 'https://github.com/KeThien', 'http://jramon1.github.io/portfolio/', 3, 'ke_thien-min.png', false],
+  ['Luc', nil, 'https://github.com/ScrumMaster323', 'http://jurthetauren.github.io/portfolio/', 5, 'luc-min.png', false],
+  ['Yoshi', nil, 'https://github.com/Yoshivanroeyen', 'http://jurjenjm.github.io/portfolio/', 2, 'yoshi-min.png', false],
+  ['Thomas', nil, 'https://github.com/Sohett', 'http://www.lrjbrual.com/', 5, 'thomas-min.png', false],
+  ['Lynn', nil, 'https://github.com/LynnVanderhallen', 'http://merelsteenbrink.github.io/portofolio/', 2, 'lynn-min.png', false],
+  ['Maxim', nil, 'https://github.com/MaximPiessen', 'http://merelsteenbrink.github.io/portofolio/', 4, 'maxim-min.png', false],
+  ['Philippe', nil, 'https://github.com/filouzzz', 'http://micky0806.github.io/portfolio/', 6, 'philippe-min.png', false],
+  ['Pablo', nil, 'https://github.com/pablocm90', 'http://feiko1.github.io/portfolio/', 2, 'pablo-min.png', false],
+  ['Pierre', nil, 'https://github.com/pierrecollinet', 'https://nadyaa1.github.io/portfolio/', 4, 'pierre-min.png', false],
+  ['Madeline', nil, 'https://github.com/madoleary', 'https://nadyaa1.github.io/portfolio/', 3, 'madeline-min.png', false],
+  ['Jun Joseph', nil, 'https://github.com/jjpad', 'https://nadyaa1.github.io/portfolio/', 1, 'jun_joseph-min.png', false],
+  ['Louise', nil, 'https://github.com/louisepicot', 'https://nadyaa1.github.io/portfolio/', 1, 'louise-min.png', false],
+  ['Batch 96', nil, nil, 'https://www.lewagon.com/fr', nil, 'lewagon-min.png', true]
 ]
 
 Student_list.each do |first_name, last_name, github, portfolio, project, picture, fake|
@@ -75,7 +75,7 @@ Meta_list = [
 
 Meta_list.each do |name, project_id, meta_tag_id|
   MetaTag.create(name: name)
-  ProjectsMetaTag.create(project_id: project_id, meta_tag_id: meta_tag_id)
+  MetaTagsProject.create(project_id: project_id, meta_tag_id: meta_tag_id)
 end
 
 # All batches have this meta tag

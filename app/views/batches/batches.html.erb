@@ -15,7 +15,9 @@
   </div>
   <header>
     <div class="wagon-logo">
-      <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
+      <a href="<%= "http://lewagon.com/#{I18n.locale}/brussels" %>">
+        <%= image_tag "le-wagon-long-logo.png", class: "logo" %>
+      </a>
     </div>
     <div class="batch-switch-languages">
       <%= link_to 'FR', root_path('fr') %>
@@ -38,7 +40,7 @@
                 <p><%= l(batch.date_start, format: :month) %> - <%= l(batch.date_end, format: :month_year) %></p>
               </div>
               <div class='batch-item-content-btn'>
-                <%= link_to t('batches.link_to_students'), "/#{I18n.locale}/batches/#{batch.name}/", data: { turbolinks: false } %>
+                <%= link_to t('batches.link_to_students'), "/#{I18n.locale}/batches/#{batch.name}/", data: {turbolinks: false}%>
                 <%# because we don't have the video, this button is not recommended %>
                 <%# if project_exists?(batch) %>
                   <%#= link_to t('batches.link_to_projects'), "https://www.lewagon.com/#{I18n.locale}/demoday/#{batch.name}/", target: '_blank', class: 'is-outlined' %>

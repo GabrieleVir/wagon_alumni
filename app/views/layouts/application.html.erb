@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="description" content="Website to search the students of Le Wagon's Alumni">
   <meta name="description" content="Website for searching throw all the alumni of Le Wagon">
-  <title>AlumniBrusselsLeWagon</title>
+  <title><%= @batch ? t(@title_i18n_name, batch_number: @batch.name) : t(@title_i18n_name) %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
